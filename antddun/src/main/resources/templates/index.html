@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>개미는 뚠뚠</title>
+    <style>
+        h1 {
+            display: inline
+            width: 200px;
+            height: 50px;
+            line-height: 48px;
+        }
+        ul li {
+            float: left;
+            width: 20%;
+            height:50px;
+            line-height:48px;
+            text-align: center;
+        }
+        li { list-style: none;}
+        #logo {font-weight:bold;}
+        .list_active {font-weight:bold;}
+        .list_inactive {}
+    </style>
+</head>
+<body>
+<header>
+    <h1 class="logo">
+        <a th:href="@{/antddun}">개미는 뚠뚠</a>
+    </h1>
+    <nav>
+        <ul class="gnb_tab">
+            <li title="market" class="list_active">
+                <span>
+                    <a th:href="@{/h2-console}">소소한JOB</a>
+                </span>
+            </li>
+            <li title="qna" class="list_inactive">
+                <span>
+                    <a>QnA</a>
+                </span>
+            </li>
+            <li title="board" class="list_inactive">
+                <span>
+                    <a>자유게시판</a>
+                </span>
+            </li>
+        </ul>
+
+    </nav>
+</header>
+
+<hr>
+<button>
+    <a th:href="@{/member/login}">로그인</a>
+</button>
+</body>
+</html>
