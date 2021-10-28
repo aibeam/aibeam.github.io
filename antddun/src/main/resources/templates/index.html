@@ -4,55 +4,145 @@
     <meta charset="UTF-8">
     <title>개미는 뚠뚠</title>
     <style>
-        h1 {
-            display: inline
-            width: 200px;
-            height: 50px;
-            line-height: 48px;
+        @font-face {
+            font-family: 'yg-jalnan';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'ELAND_Choice_M';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Choice_M.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        header {
+            weight: 1080px;
+        }
+        #logo {
+            font-family: 'yg-jalnan';
+            font-size: 25px;
+            display: inline-block;
+            float: left;
+            width: 180px;
+            height: 40px;
+            line-height: 38px;
+        }
+        a:link{
+            color: #2b2b2b;
+            text-decoration: none;
         }
         ul li {
             float: left;
-            width: 20%;
-            height:50px;
-            line-height:48px;
+            width: 130px;
+            height:40px;
+            line-height: 42px;
             text-align: center;
         }
-        li { list-style: none;}
-        #logo {font-weight:bold;}
+        li {
+            list-style: none;
+            font-family: 'ELAND_Choice_M';
+            font-size: 20px;
+        }
+        h3, span {
+            font-family: 'ELAND_Choice_M';
+            color: #2b2b2b;
+        }
+        h3 { font-size: 18px; }
+
         .list_active {font-weight:bold;}
-        .list_inactive {}
     </style>
 </head>
 <body>
-<header>
-    <h1 class="logo">
-        <a th:href="@{/antddun}">개미는 뚠뚠</a>
-    </h1>
-    <nav>
-        <ul class="gnb_tab">
-            <li title="market" class="list_active">
-                <span>
-                    <a th:href="@{/h2-console}">소소한JOB</a>
-                </span>
-            </li>
-            <li title="qna" class="list_inactive">
-                <span>
-                    <a>QnA</a>
-                </span>
-            </li>
-            <li title="board" class="list_inactive">
-                <span>
-                    <a>자유게시판</a>
-                </span>
-            </li>
-        </ul>
+    <header>
+        <div class="center">
+            <span>ㅇㅇㅇ까지 ㅇ일 남았습니다.</span>
+        </div>
+        <h1 id="logo">
+            <a th:href="@{/antddun}">개미는 뚠뚠</a>
+        </h1>
+        <nav>
+            <ul class="gnb_tab">
+                <li title="market" class="list_inactive">
+                    <span>
+                        <a th:href="@{/antddun/market}">소소한JOB</a>
+                    </span>
+                </li>
+                <li title="qna" class="list_inactive">
+                    <span>
+                        <a th:href="@{/antddun/qna}">QnA</a>
+                    </span>
+                </li>
+                <li title="board" class="list_inactive">
+                    <span>
+                        <a th:href="@{/antddun/board}">자유게시판</a>
+                    </span>
+                </li>
+            </ul>
 
-    </nav>
-</header>
+        </nav>
+        <div id="search">
 
-<hr>
-<button>
-    <a th:href="@{/member/login}">로그인</a>
-</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="market_home">
+            <h3 class="subtitle_home">소소한JOB 카테고리</h3>
+            <div>
+
+            </div>
+        </section>
+        <section id="qna_home">
+            <h3 class="subtitle_home">QnA</h3>
+            <span><a th:href="@{/antddun/qna}">더보기</a></span>
+            <div>
+
+            </div>
+        </section>
+        <section id="peopng_home">
+            <h3 class="subtitle_home">내일이면 사라져요!</h3>
+            <span><a th:href="@{/antddun/board/peong}">더보기</a></span>
+            <div>
+
+            </div>
+        </section>
+        <section id="board_home">
+            <h3 class="subtitle_home">자유게시판</h3>
+            <span><a th:href="@{/antddun/board}">더보기</a></span>
+            <div>
+
+            </div>
+        </section>
+    <main/>
+
+    <aside>
+        <div id="user_unlogin">
+            <button>
+                <a th:href="@{/member/login}">로그인</a>
+            </button>
+            <button>
+                <a th:href="@{/member/register}">회원가입</a>
+            </button>
+        </div>
+        <div id="use_login">
+
+        </div>
+        <div class="ad_home">
+
+        </div>
+        <div id="lunch_home">
+
+        </div>
+    </aside>
+
+    <footer class="center">
+        <span>ⓒ개미는뚠뚠 2021</span>
+    </footer>
 </body>
 </html>
