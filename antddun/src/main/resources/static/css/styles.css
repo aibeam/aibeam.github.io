@@ -42,17 +42,46 @@ li {
     margin-right: 30px;
 }
 
-h3 {
-    display: inline-block;
-    float: left;
-    font-size: 22px;
+h4 {
+	font-size: 2.25rem;
+	margin: .5rem;
+	padding: 2%;
+	position: relative;
+	text-align: center;
 }
 
-h4 {
-    display: inline-block;
-    text-align: center;
-    font-size: 20px;
-    padding: 1rem;
+body { background-color: #aacccc }
+.js .slider-single > div:nth-child(1n+2) { display: none }
+.js .slider-single.slick-initialized > div:nth-child(1n+2) { display: block }
+
+h6 {
+	background: #f0f0f0;
+	font-size: 2.25rem;
+	margin: .5rem;
+	padding: 2%;
+	position: relative;
+	text-align: center;
+}
+
+.slider-single h6 {
+	line-height: 10rem;
+}
+
+.slider-nav h6::before {
+	content: "";
+	display: inline-block;
+}
+
+.slider-nav h6 span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.slick-slide.is-active h6 {
+	color: #c00;
+	background-color: #fff
 }
 
 span {
