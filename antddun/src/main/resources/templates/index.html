@@ -1,148 +1,99 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>개미는 뚠뚠</title>
-    <style>
-        @font-face {
-            font-family: 'yg-jalnan';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'ELAND_Choice_M';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Choice_M.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        .center {
-            text-align: center;
-        }
-
-        header {
-            weight: 1080px;
-        }
-        #logo {
-            font-family: 'yg-jalnan';
-            font-size: 25px;
-            display: inline-block;
-            float: left;
-            width: 180px;
-            height: 40px;
-            line-height: 38px;
-        }
-        a:link{
-            color: #2b2b2b;
-            text-decoration: none;
-        }
-        ul li {
-            float: left;
-            width: 130px;
-            height:40px;
-            line-height: 42px;
-            text-align: center;
-        }
-        li {
-            list-style: none;
-            font-family: 'ELAND_Choice_M';
-            font-size: 20px;
-        }
-        h3, span {
-            font-family: 'ELAND_Choice_M';
-            color: #2b2b2b;
-        }
-        h3 { font-size: 18px; }
-
-        .list_active {font-weight:bold;}
-    </style>
-</head>
-<body>
-    <header>
-        <div class="center">
-            <span>ㅇㅇㅇ까지 ㅇ일 남았습니다.</span>
-        </div>
-        <h1 id="logo">
-            <a th:href="@{/antddun}">개미는 뚠뚠</a>
-        </h1>
-        <nav>
-            <ul class="gnb_tab">
-                <li title="market" class="list_inactive">
-                    <span>
-                        <a th:href="@{/antddun/market}">소소한JOB</a>
-                    </span>
-                </li>
-                <li title="qna" class="list_inactive">
-                    <span>
-                        <a th:href="@{/antddun/qna}">QnA</a>
-                    </span>
-                </li>
-                <li title="board" class="list_inactive">
-                    <span>
-                        <a th:href="@{/antddun/board}">자유게시판</a>
-                    </span>
-                </li>
-            </ul>
-
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>개미는 뚠뚠</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <div class="wish">ㅇㅇㅇ까지 ㅇ일 남았습니다.</div>
+        </header>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <div class="container">
+                <a id="logo" class="navbar-brand" href="@{/antddun}">개미는 뚠뚠</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-lg-0">
+                        <li><a class="nav-link" href="@{/antddun/market}">소소한JOB</a></li>
+                        <li><a class="nav-link" href="@{/antddun/qna}">QnA</a></li>
+                        <li><a class="nav-link" href="@{/antddun/board}">자유게시판</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <div id="search">
 
-        </div>
-    </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="mb-4">
+                        <section class="card mg_bottom">
+                            <div class="card-header">
+                                <h3>소소한JOB 카테고리</h3>
+                            </div>
+                            <div class="card-body">insert info</div>
+                        </section>
+                        <section class="card mg_bottom">
+                            <div class="card-header">
+                                <h3>QnA</h3>
+                                <span><a href="@{/antddun/qna}">더보기</a></span>
+                            </div>
+                            <div class="card-body">insert info</div>
+                        </section>
+                        <section class="card mg_bottom">
+                            <div class="card-header">
+                                <h3>내일이면 사라져요!</h3>
+                                <span><a href="@{/antddun/board/peong}">더보기</a></span>
+                            </div>
+                            <div class="card-body">insert info</div>
+                        </section>
+                        <section class="card mg_bottom">
+                            <div class="card-header">
+                                <h3>자유게시판</h3>
+                                <span><a href="@{/antddun/board}">더보기</a></span>
+                            </div>
+                            <div class="card-body">insert info</div>
+                        </section>
+                    </div>
+                </div>
 
-    <main>
-        <section id="market_home">
-            <h3 class="subtitle_home">소소한JOB 카테고리</h3>
-            <div>
+                <div class="col-lg-3">
+                    <div class="mb-3">
+                        <div>
+                            <button class="button btn_line login">
+                                <a href="@{/member/login}">로그인</a>
+                            </button>
+                            <button class="button btn_full login">
+                                <a href="@{/member/register}">회원가입</a>
+                            </button>
+                        </div>
+                    </div>
 
+                    <div class="card mb-3">
+                        <img src="https://akademi.semroot.com/wp-content/uploads/2019/12/google-ads.jpg" />
+                    </div>
+
+                    <div class="mb-3">
+                        <h4>오늘 점심메뉴는?</h4>
+                        <div class="slot-machine group">
+                            <div class="reel">떡튀순</div>
+                        </div>
+                       <button class="button btn_lunch">메뉴 고르기</button>
+                    </div>
+                </div>
             </div>
-        </section>
-        <section id="qna_home">
-            <h3 class="subtitle_home">QnA</h3>
-            <span><a th:href="@{/antddun/qna}">더보기</a></span>
-            <div>
-
-            </div>
-        </section>
-        <section id="peopng_home">
-            <h3 class="subtitle_home">내일이면 사라져요!</h3>
-            <span><a th:href="@{/antddun/board/peong}">더보기</a></span>
-            <div>
-
-            </div>
-        </section>
-        <section id="board_home">
-            <h3 class="subtitle_home">자유게시판</h3>
-            <span><a th:href="@{/antddun/board}">더보기</a></span>
-            <div>
-
-            </div>
-        </section>
-    <main/>
-
-    <aside>
-        <div id="user_unlogin">
-            <button>
-                <a th:href="@{/member/login}">로그인</a>
-            </button>
-            <button>
-                <a th:href="@{/member/register}">회원가입</a>
-            </button>
         </div>
-        <div id="use_login">
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright ⓒ개미는뚠뚠 2021</p></div>
+        </footer>
 
-        </div>
-        <div class="ad_home">
-
-        </div>
-        <div id="lunch_home">
-
-        </div>
-    </aside>
-
-    <footer class="center">
-        <span>ⓒ개미는뚠뚠 2021</span>
-    </footer>
-</body>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
