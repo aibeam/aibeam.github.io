@@ -13,6 +13,45 @@
     font-style: normal;
 }
 
+.tag_web{
+    font-size: 14px;
+    padding-top: 2px;
+    border-radius: 5px;
+    height: 25px;
+    width: 60px;
+    background: #d6ebff;
+    text-align: center;
+}
+
+.tag_document{
+    font-size: 14px;
+    padding-top: 2px;
+    border-radius: 5px;
+    height: 25px;
+    width: 60px;
+    background: #fffed6;
+    text-align: center;
+}
+
+.tag_lang{
+    font-size: 14px;
+    padding-top: 2px;
+    border-radius: 5px;
+    height: 25px;
+    width: 60px;
+    background: #daf2da;
+    text-align: center;
+}
+
+.tag_design{
+    font-size: 14px;
+    padding-top: 2px;
+    border-radius: 5px;
+    height: 25px;
+    width: 60px;
+    background: #ffe3f5;
+    text-align: center;
+}
 
 a:link{
     color: #2b2b2b;
@@ -141,6 +180,8 @@ span {
     border: 3px solid #ffdf52;
     color: #ffffff;
 }
+
+
 
 .slot-machine {
   width: 95%;

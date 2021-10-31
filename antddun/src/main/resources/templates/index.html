@@ -8,6 +8,10 @@
         <title>개미는 뚠뚠</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <link href="css/styles.css" rel="stylesheet" />
+        <!--slick slider-->
+        <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     </head>
     <body>
         <!--로그인 정보에 따라 노출 유무 결정-->
@@ -71,18 +75,18 @@
                                 <div id="page">
                                     <div class="row">
                                         <div class="column small-11 small-centered">
-                                            <div class="slider slider-nav">
-                                                <div><h6><span>1</span></h6></div>
-                                                <div><h6><span>2</span></h6></div>
-                                                <div><h6><span>3</span></h6></div>
-                                                <div><h6><span>4</span></h6></div>
-                                                <div><h6><span>5</span></h6></div>
-                                                <div><h6><span>6</span></h6></div>
-                                                <div><h6><span>7</span></h6></div>
-                                                <div><h6><span>8</span></h6></div>
-                                                <div><h6><span>9</span></h6></div>
-                                                <div><h6><span>10</span></h6></div>
-                                            </div>
+                                            <section class="visual">
+                                                <div><img src="http://placehold.it/160x160?text=1" style="margin:0.5px;"/></div>
+                                                <div><img src="http://placehold.it/160x160?text=2" style="margin:0.5px;"/></div>
+                                                <div><img src="http://placehold.it/160x160?text=3" style="margin:0.5px;"/></div>
+                                                <div><img src="http://placehold.it/160x160?text=4" style="margin:0.5px;"/></div>
+                                                <div><img src="http://placehold.it/160x160?text=5" style="margin:0.5px;"/></div>
+                                                <div><img src="http://placehold.it/160x160?text=6" style="margin:0.5px;"/></div>
+                                                <div><img src="http://placehold.it/160x160?text=7" style="margin:0.5px;"/></div>
+                                                <div><img src="http://placehold.it/160x160?text=8" style="margin:0.5px;"/></div>
+                                                <div><img src="http://placehold.it/160x160?text=9" style="margin:0.5px;"/></div>
+                                                <div><img src="http://placehold.it/160x160?text=more"/></div>
+                                            </section>
                                         </div>
                                     </div>
                                 </div>
@@ -98,31 +102,36 @@
                                 <table class="table">
                                     <tbody>
                                     <tr>
+                                        <td><span class="tag_web">웹개발</span></td>
                                         <td>Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
                                         <td class="data"><img src="assets/coins.png" width="19"> 150</td>
                                         <td class="data"><img src="assets/eye.png" width="20"> 67</td>
                                         <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
                                     </tr>
                                     <tr>
-                                        <td>JPA 학습 방법 여쭤봅니다</td>
+                                        <td><span class="tag_document">문서</span></td>
+                                        <td>컴퓨터 문서 작업간... 파란박스 제거방법 아시는분?ㅠ</td>
                                         <td class="data"><img src="assets/coins.png" width="19"> 150</td>
                                         <td class="data"><img src="assets/eye.png" width="20"> 67</td>
                                         <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
                                     </tr>
                                     <tr>
+                                        <td><span class="tag_web">웹개발</span></td>
                                         <td>리눅스 서버 인프라 관리자 하다가 개발 PL로 가게 되면 업무 적응하기 힘들까요??</td>
                                         <td class="data"><img src="assets/coins.png" width="19"> 150</td>
                                         <td class="data"><img src="assets/eye.png" width="20"> 67</td>
                                         <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
                                     </tr>
                                     <tr>
-                                        <td>오픈소스 사용 시 깃허브 레포지토리 내 라이센스 표기 방법이 궁금합니다.</td>
+                                        <td><span class="tag_lang">번역</span></td>
+                                        <td>급)영어로 번역좀 도와주세요!!</td>
                                         <td class="data"><img src="assets/coins.png" width="19"> 150</td>
                                         <td class="data"><img src="assets/eye.png" width="20"> 67</td>
                                         <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
                                     </tr>
                                     <tr>
-                                        <td>Vue.js axios 통신후 data()에 선언한 배열을 못찾습니다</td>
+                                        <td><span class="tag_design">디자인</span></td>
+                                        <td>상표권과 디자인 저작권 차이가 뭔가요?</td>
                                         <td class="data"><img src="assets/coins.png" width="19"> 150</td>
                                         <td class="data"><img src="assets/eye.png" width="20"> 67</td>
                                         <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
@@ -231,5 +240,26 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!--slick slider JS-->
+        <script>
+            $('.visual').slick({
+              slidesToShow: 5,
+              slidesToScroll: 5
+            });
+
+            var filtered = false;
+
+            $('.js-filter').on('click', function(){
+              if (filtered === false) {
+                $('.visual').slick('slickFilter',':even');
+                $(this).text('Unfilter Slides');
+                filtered = true;
+              } else {
+                $('.visual').slick('slickUnfilter');
+                $(this).text('Filter Slides');
+                filtered = false;
+              }
+            });
+        </script>
     </body>
 </html>
