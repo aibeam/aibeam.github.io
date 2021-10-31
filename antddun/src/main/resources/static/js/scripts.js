@@ -6,6 +6,8 @@
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
 
+
+
 $(document).ready(function() {
     var tMax = 4000, // animation time, ms
         height = 700,
@@ -94,9 +96,6 @@ $(document).ready(function() {
 
   init();
 });
-
-
-
 
 
  $('.slider-single').slick({

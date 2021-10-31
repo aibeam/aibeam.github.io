@@ -10,9 +10,12 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
+        <!--로그인 정보에 따라 노출 유무 결정-->
         <header>
-            <div class="wish">ㅇㅇㅇ까지 ㅇ일 남았습니다.</div>
+            <div class="wish">🎉<strong>아이폰13PRO</strong>까지 <strong>5일</strong> 남았습니다.✨</div>
         </header>
+
+        <!--페이지 상단 공통 : logo & nav-->
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container">
                 <a id="logo" class="navbar-brand" href="@{/antddun}">개미는 뚠뚠</a>
@@ -27,13 +30,42 @@
             </div>
         </nav>
 
+        <!--홈 메뉴-->
         <div class="container">
             <div class="row">
+
+                <!--홈 좌측 : 회원정보 / 광고 / 점메추-->
+                <div class="col-lg-3">
+                    <div class="mb-3">
+                        <div>
+                            <button class="button btn_line login">
+                                <a href="@{/member/login}">로그인</a>
+                            </button>
+                            <button class="button btn_full login">
+                                <a href="@{/member/register}">회원가입</a>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3">
+                        <img src="https://akademi.semroot.com/wp-content/uploads/2019/12/google-ads.jpg" />
+                    </div>
+
+                    <div class="mb-3">
+                        <h4>오늘 점심메뉴는?</h4>
+                        <div class="slot-machine group">
+                            <div class="reel">떡튀순</div>
+                        </div>
+                        <button class="button btn_lunch">메뉴 고르기</button>
+                    </div>
+                </div>
+
+                <!--홈 우측 : 게시물 리스트-->
                 <div class="col-lg-9">
                     <div class="mb-4">
                         <section class="card mg_bottom">
                             <div class="card-header">
-                                <h3>소소한JOB 카테고리</h3>
+                                <h3 class="boardlist">소소한JOB 카테고리</h3>
                             </div>
                             <div class="card-body">
                                 <div id="page">
@@ -56,56 +88,141 @@
                                 </div>
                             </div>
                         </section>
+
                         <section class="card mg_bottom">
                             <div class="card-header">
-                                <h3>QnA</h3>
-                                <span><a href="@{/antddun/qna}">더보기</a></span>
+                                <h3 class="boardlist">QnA</h3>
+                                <span class="more"><a href="@{/antddun/qna}">더보기</a></span>
                             </div>
-                            <div class="card-body">insert info</div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <tbody>
+                                    <tr>
+                                        <td>Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="data"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>JPA 학습 방법 여쭤봅니다</td>
+                                        <td class="data"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>리눅스 서버 인프라 관리자 하다가 개발 PL로 가게 되면 업무 적응하기 힘들까요??</td>
+                                        <td class="data"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>오픈소스 사용 시 깃허브 레포지토리 내 라이센스 표기 방법이 궁금합니다.</td>
+                                        <td class="data"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vue.js axios 통신후 data()에 선언한 배열을 못찾습니다</td>
+                                        <td class="data"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </section>
                         <section class="card mg_bottom">
                             <div class="card-header">
-                                <h3>내일이면 사라져요!</h3>
+                                <h3 class="boardlist">내일이면 사라져요!</h3>
                                 <span><a href="@{/antddun/board/peong}">더보기</a></span>
                             </div>
-                            <div class="card-body">insert info</div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <tbody>
+                                    <tr>
+                                        <td>주자차타워에 내차가 없데 ㅋㅋㅋㅋ</td>
+                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
+                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>여잔데 얀센 맞은 사람 있어?</td>
+                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
+                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>막걸리 와인 치즈 같은거 몸에서 너무 안받는데</td>
+                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
+                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>내가 출근해서 생각해보니까</td>
+                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
+                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>퇴근후 공부 같이 할 사람?</td>
+                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
+                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </section>
+
                         <section class="card mg_bottom">
                             <div class="card-header">
-                                <h3>자유게시판</h3>
+                                <h3 class="boardlist">자유게시판</h3>
                                 <span><a href="@{/antddun/board}">더보기</a></span>
                             </div>
-                            <div class="card-body">insert info</div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <tbody>
+                                    <tr>
+                                        <td>주자차타워에 내차가 없데 ㅋㅋㅋㅋ</td>
+                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
+                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>여잔데 얀센 맞은 사람 있어?</td>
+                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
+                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>막걸리 와인 치즈 같은거 몸에서 너무 안받는데</td>
+                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
+                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>내가 출근해서 생각해보니까</td>
+                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
+                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>퇴근후 공부 같이 할 사람?</td>
+                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
+                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </section>
-                    </div>
-                </div>
 
-                <div class="col-lg-3">
-                    <div class="mb-3">
-                        <div>
-                            <button class="button btn_line login">
-                                <a href="@{/member/login}">로그인</a>
-                            </button>
-                            <button class="button btn_full login">
-                                <a href="@{/member/register}">회원가입</a>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="card mb-3">
-                        <img src="https://akademi.semroot.com/wp-content/uploads/2019/12/google-ads.jpg" />
-                    </div>
-
-                    <div class="mb-3">
-                        <h4>오늘 점심메뉴는?</h4>
-                        <div class="slot-machine group">
-                            <div class="reel">떡튀순</div>
-                        </div>
-                       <button class="button btn_lunch">메뉴 고르기</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!--footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright ⓒ개미는뚠뚠 2021</p></div>
         </footer>
