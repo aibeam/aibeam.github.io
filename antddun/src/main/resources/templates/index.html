@@ -14,9 +14,10 @@
         <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     </head>
     <body>
+
         <!--로그인 정보에 따라 노출 유무 결정-->
         <header>
-            <div class="wish">🎉<strong>아이폰13PRO</strong>까지 <strong>5일</strong> 남았습니다.✨</div>
+            <div class="wish login" style="display: none;">🎉<strong>아이폰13PRO</strong>까지 <strong>5일</strong> 남았습니다.✨</div>
         </header>
 
         <!--페이지 상단 공통 : logo & nav-->
@@ -40,7 +41,7 @@
 
                 <!--홈 좌측 : 회원정보 / 광고 / 점메추-->
                 <div class="col-lg-3">
-                    <div class="mb-3">
+                    <div class="mb-3 menuMargin">
                         <div>
                             <button class="button btn_line login">
                                 <a href="@{/member/login}">로그인</a>
@@ -51,17 +52,24 @@
                         </div>
                     </div>
 
-                    <div class="card mb-3">
-                        <img src="https://akademi.semroot.com/wp-content/uploads/2019/12/google-ads.jpg" />
+                    <div class="fullsize">
+                        <div class="mb-3 menuMargin">
+                            <h4>오늘 점심메뉴는?</h4>
+                            <div class="slot-machine group">
+                                <div class="reel">떡튀순</div>
+                            </div>
+                            <button class="button btn_lunch">메뉴 고르기</button>
+                        </div>
+
+                        <div class="card mb-3">
+                            <img src="http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg" />
+                        </div>
+
+                        <div class="card mb-3">
+                            <img src="http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg" />
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <h4>오늘 점심메뉴는?</h4>
-                        <div class="slot-machine group">
-                            <div class="reel">떡튀순</div>
-                        </div>
-                        <button class="button btn_lunch">메뉴 고르기</button>
-                    </div>
                 </div>
 
                 <!--홈 우측 : 게시물 리스트-->
@@ -99,84 +107,42 @@
                                 <span class="more"><a href="@{/antddun/qna}">더보기</a></span>
                             </div>
                             <div class="card-body">
-                                <table class="table">
+                                <table class="table" style="table-layout: fixed">
                                     <tbody>
                                     <tr>
-                                        <td><span class="tag_web">웹개발</span></td>
-                                        <td>Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
-                                        <td class="data"><img src="assets/coins.png" width="19"> 150</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                        <td style="width:15%"><span class="tag_web">웹개발</span></td>
+                                        <td style="width:55%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="data" style="width:10%"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data" style="width:10%"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" style="width:10%"><img src="assets/messenger.png" width="18"> 5</td>
                                     </tr>
                                     <tr>
-                                        <td><span class="tag_document">문서</span></td>
-                                        <td>컴퓨터 문서 작업간... 파란박스 제거방법 아시는분?ㅠ</td>
-                                        <td class="data"><img src="assets/coins.png" width="19"> 150</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                        <td style="width:15%"><span class="tag_web">웹개발</span></td>
+                                        <td style="width:40%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="data" style="width:15%"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data" style="width:15%"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" style="width:15%"><img src="assets/messenger.png" width="18"> 5</td>
                                     </tr>
                                     <tr>
-                                        <td><span class="tag_web">웹개발</span></td>
-                                        <td>리눅스 서버 인프라 관리자 하다가 개발 PL로 가게 되면 업무 적응하기 힘들까요??</td>
-                                        <td class="data"><img src="assets/coins.png" width="19"> 150</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                        <td style="width:15%"><span class="tag_web">웹개발</span></td>
+                                        <td style="width:40%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="data" style="width:15%"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data" style="width:15%"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" style="width:15%"><img src="assets/messenger.png" width="18"> 5</td>
                                     </tr>
                                     <tr>
-                                        <td><span class="tag_lang">번역</span></td>
-                                        <td>급)영어로 번역좀 도와주세요!!</td>
-                                        <td class="data"><img src="assets/coins.png" width="19"> 150</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                        <td style="width:15%"><span class="tag_web">웹개발</span></td>
+                                        <td style="width:40%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="data" style="width:15%"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data" style="width:15%"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" style="width:15%"><img src="assets/messenger.png" width="18"> 5</td>
                                     </tr>
                                     <tr>
-                                        <td><span class="tag_design">디자인</span></td>
-                                        <td>상표권과 디자인 저작권 차이가 뭔가요?</td>
-                                        <td class="data"><img src="assets/coins.png" width="19"> 150</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </section>
-                        <section class="card mg_bottom">
-                            <div class="card-header">
-                                <h3 class="boardlist">내일이면 사라져요!</h3>
-                                <span><a href="@{/antddun/board/peong}">더보기</a></span>
-                            </div>
-                            <div class="card-body">
-                                <table class="table">
-                                    <tbody>
-                                    <tr>
-                                        <td>주자차타워에 내차가 없데 ㅋㅋㅋㅋ</td>
-                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
-                                    </tr>
-                                    <tr>
-                                        <td>여잔데 얀센 맞은 사람 있어?</td>
-                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
-                                    </tr>
-                                    <tr>
-                                        <td>막걸리 와인 치즈 같은거 몸에서 너무 안받는데</td>
-                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
-                                    </tr>
-                                    <tr>
-                                        <td>내가 출근해서 생각해보니까</td>
-                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
-                                    </tr>
-                                    <tr>
-                                        <td>퇴근후 공부 같이 할 사람?</td>
-                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                        <td style="width:15%"><span class="tag_web">웹개발</span></td>
+                                        <td style="width:40%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="data" style="width:15%"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data" style="width:15%"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" style="width:15%"><img src="assets/messenger.png" width="18"> 5</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -185,46 +151,122 @@
 
                         <section class="card mg_bottom">
                             <div class="card-header">
-                                <h3 class="boardlist">자유게시판</h3>
-                                <span><a href="@{/antddun/board}">더보기</a></span>
+                                <h3 class="boardlist">내일이면 사라져요!</h3>
+                                <span class="more"><a href="@{/antddun/qna}">더보기</a></span>
                             </div>
                             <div class="card-body">
-                                <table class="table">
+                                <table class="table" style="table-layout: fixed">
                                     <tbody>
                                     <tr>
-                                        <td>주자차타워에 내차가 없데 ㅋㅋㅋㅋ</td>
-                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                        <td style="width:5%">💣</td>
+                                        <td style="width:15%"><span class="tag_web">웹개발</span></td>
+                                        <td style="width:35%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="data" style="width:15%"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data" style="width:15%"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" style="width:15%"><img src="assets/messenger.png" width="18"> 5</td>
                                     </tr>
                                     <tr>
-                                        <td>여잔데 얀센 맞은 사람 있어?</td>
-                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                        <td style="width:5%">💣</td>
+                                        <td style="width:15%"><span class="tag_web">웹개발</span></td>
+                                        <td style="width:35%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="data" style="width:15%"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data" style="width:15%"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" style="width:15%"><img src="assets/messenger.png" width="18"> 5</td>
                                     </tr>
                                     <tr>
-                                        <td>막걸리 와인 치즈 같은거 몸에서 너무 안받는데</td>
-                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                        <td style="width:5%">💣</td>
+                                        <td style="width:15%"><span class="tag_web">웹개발</span></td>
+                                        <td style="width:35%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="data" style="width:15%"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data" style="width:15%"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" style="width:15%"><img src="assets/messenger.png" width="18"> 5</td>
                                     </tr>
                                     <tr>
-                                        <td>내가 출근해서 생각해보니까</td>
-                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                        <td style="width:5%">💣</td>
+                                        <td style="width:15%"><span class="tag_web">웹개발</span></td>
+                                        <td style="width:35%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="data" style="width:15%"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data" style="width:15%"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" style="width:15%"><img src="assets/messenger.png" width="18"> 5</td>
                                     </tr>
                                     <tr>
-                                        <td>퇴근후 공부 같이 할 사람?</td>
-                                        <td class="data"><img src="assets/heart.png" width="19"> 50</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                        <td style="width:5%">💣</td>
+                                        <td style="width:15%"><span class="tag_web">웹개발</span></td>
+                                        <td style="width:35%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="data" style="width:15%"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data" style="width:15%"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" style="width:15%"><img src="assets/messenger.png" width="18"> 5</td>
                                     </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </section>
+
+                        <section class="card mg_bottom">
+                            <div class="card-header">
+                                <h3 class="boardlist">자유 게시판</h3>
+                                <span class="more"><a href="@{/antddun/qna}">더보기</a></span>
+                            </div>
+                            <div class="card-body">
+                                <table class="table" style="table-layout: fixed">
+                                    <tbody>
+                                    <tr>
+                                        <td style="width:5%">💣</td>
+                                        <td style="width:15%"><span class="tag_web">웹개발</span></td>
+                                        <td style="width:35%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="data" style="width:15%"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data" style="width:15%"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" style="width:15%"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:5%">💣</td>
+                                        <td style="width:15%"><span class="tag_web">웹개발</span></td>
+                                        <td style="width:35%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="data" style="width:15%"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data" style="width:15%"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" style="width:15%"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:5%">💣</td>
+                                        <td style="width:15%"><span class="tag_web">웹개발</span></td>
+                                        <td style="width:35%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="data" style="width:15%"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data" style="width:15%"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" style="width:15%"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:5%">💣</td>
+                                        <td style="width:15%"><span class="tag_web">웹개발</span></td>
+                                        <td style="width:35%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="data" style="width:15%"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data" style="width:15%"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" style="width:15%"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:5%">💣</td>
+                                        <td style="width:15%"><span class="tag_web">웹개발</span></td>
+                                        <td style="width:35%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="data" style="width:15%"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data" style="width:15%"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" style="width:15%"><img src="assets/messenger.png" width="18"> 5</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <div class="mbsize">
+                            <div class="card mb-3">
+                                <img src="http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg" />
+                            </div>
+                            <div class="mb-3 menuMargin">
+                                <h4>오늘 점심메뉴는?</h4>
+                                <div class="slot-machine group">
+                                    <div class="reel">떡튀순</div>
+                                </div>
+                                <button class="button btn_lunch">메뉴 고르기</button>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -240,8 +282,9 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!--slick slider JS-->
+
         <script>
+            <!--slick slider JS-->
             $('.visual').slick({
               slidesToShow: 5,
               slidesToScroll: 5
@@ -260,6 +303,19 @@
                 filtered = false;
               }
             });
+
+            <!--사이즈별 점심메뉴 & 광고 위치 변경-->
+            $(document).ready(function() {
+                $(window).resize(function() {
+                  if ($(window).width() < 992) {
+                    $('.fullsize').hide();
+                    $('.mbsize').show();
+                  } else {
+                    $('.fullsize').show();
+                    $('.mbsize').hide();
+                  }
+                });
+              });
         </script>
     </body>
 </html>
