@@ -32,7 +32,7 @@
 }
 
 .peong {
-    width: 5px;
+    width: 22px;
 }
 
 .tag_peong{
@@ -120,10 +120,18 @@ strong {
      white-space: nowrap;
 }
 
+.title{
+    text-align: left;
+}
+
+.category {
+    width: 70px;
+}
+
 .data {
     font-size:13px;
-    width: 65px;
-    text-align: right;
+    width: 55px;
+    text-align: center;
 }
 
 li {
