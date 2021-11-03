@@ -13,6 +13,31 @@
     font-style: normal;
 }
 
+
+.visual {
+    transition: 2s;
+    width: 100%
+}
+
+.category_img {
+    display: inline-block;
+    width: 48rem;
+    padding: 0 1rem;
+    height: 160px;
+    background: #faedcd;
+}
+
+#fixed {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 99;
+}
+
+.box {
+    margin-top: 11rem;
+}
+
 .more{
     float: right;
     padding-top: 12px;
@@ -94,7 +119,7 @@ a:link{
 .wish {
     text-align: center;
     background: #fafafa;
-    height: 64px;
+    height: 55px;
     line-height: 62px;
     font-family: 'ELAND_Choice_M';
     font-size: 19px;
@@ -195,6 +220,13 @@ span {
 .login {
    margin: auto;
    display: block;
+}
+
+#fix {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
 }
 
 .button {
@@ -1025,6 +1057,9 @@ progress {
 @media (min-width: 992px) {
   .container-lg, .container-md, .container-sm, .container {
     max-width: 960px;
+  }
+  .mbsize {
+    display: none;
   }
 }
 @media (min-width: 1200px) {
@@ -2514,6 +2549,9 @@ progress {
   .table-responsive-lg {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+  }
+  .fullsize {
+    display: none;
   }
 }
 @media (max-width: 1199.98px) {
@@ -4406,8 +4444,7 @@ textarea.form-control-lg {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 1.2rem;
 }
 .navbar > .container,
 .navbar > .container-fluid,
@@ -8175,7 +8212,7 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #f9c74f !important;
 }
 
 .bg-secondary {
@@ -10045,7 +10082,7 @@ textarea.form-control-lg {
     margin-right: auto !important;
   }
 
-  .mb-lg-0 {
+  .mb-lg-0mb-lg-0 {
     margin-bottom: 0 !important;
   }
 
