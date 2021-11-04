@@ -53,20 +53,18 @@ li {
   text-align: center;
   text-decoration: none;
   display: block;
-  height: 45px;
+  height: 60px;
   border: none;
   border-radius: 10px;
 }
 
 .btn_login {
    width: 95%;
-   height: 50px;
    background: #F9C74F;
 }
 
 .btn_regist {
     width: 95%;
-    height: 50px;
     background: #5D4B1D;
 }
 
@@ -87,6 +85,21 @@ li {
     z-index: 99;
 }
 
+.title{
+    text-align: left;
+}
+
+.category {
+    width: 85px;
+}
+
+.data {
+    font-size:13px;
+    width: 55px;
+    text-align: center;
+    line-height: 1.9;
+}
+
 .more{
     float: right;
     padding-top: 12px;
@@ -105,60 +118,58 @@ li {
     text-overflow: ellipsis;
 }
 
+
 /*Table Category Tag Style*/
 .peong {
     width: 22px;
+    line-height:1.8;
 }
 
-.tag_peong{
-    font-size: 14px;
-    padding-top: 2px;
+.tag_b {
+    font-size: 13px;
+    padding-top: 4px;
     border-radius: 5px;
-    height: 25px;
-    width: 60px;
-    background: #bd3737;
-    color: #ffffff;
+    height: 28px;
+    width: 73px;
+    color: #919191;
+    border: 2px solid #e0e0e0;
     text-align: center;
 }
 
-.tag_web{
-    font-size: 14px;
-    padding-top: 2px;
-    border-radius: 5px;
-    height: 25px;
-    width: 60px;
-    background: #d6ebff;
-    text-align: center;
+.talk{
+    background: #ffd166;
 }
 
-.tag_document{
-    font-size: 14px;
-    padding-top: 2px;
-    border-radius: 5px;
-    height: 25px;
-    width: 60px;
-    background: #fffed6;
-    text-align: center;
+.move{
+    background: #073b4c;
 }
 
-.tag_lang{
-    font-size: 14px;
-    padding-top: 2px;
-    border-radius: 5px;
-    height: 25px;
-    width: 60px;
-    background: #daf2da;
-    text-align: center;
+.love{
+    background: #ef476f;
 }
 
-.tag_design{
-    font-size: 14px;
-    padding-top: 2px;
-    border-radius: 5px;
-    height: 25px;
-    width: 60px;
-    background: #ffe3f5;
-    text-align: center;
+.jobtalk{
+    background: #118ab2;
+}
+
+.marry{
+    background: #f94144;
+}
+
+.hobby{
+    background: #43aa8b;
+}
+
+.money{
+    background: #f9c74f;
+}
+
+.beauty{
+    background: #ff006e;]
+}
+
+.enter{
+    background: #3a86ff;
 }
 
 /*After Login Style*/
@@ -205,8 +216,9 @@ a:link{
 
 
 .boardlist {
+    font-family: 'ELAND_Choice_M';
     display: inline-block;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 #logo {
@@ -219,19 +231,6 @@ a:link{
      white-space: nowrap;
 }
 
-.title{
-    text-align: left;
-}
-
-.category {
-    width: 70px;
-}
-
-.data {
-    font-size:13px;
-    width: 55px;
-    text-align: center;
-}
 
 
 h4 {
@@ -293,6 +292,16 @@ span {
 
 
 /*Slot Machine CSS*/
+.lunch_title {
+    font-family: ELAND_Choice_M;
+    font-size:1.6rem;
+}
+
+.lunch_menu {
+    font-family: ELAND_Choice_M;
+    font-size: 3rem;
+    font-weight: 400;
+}
 
 .slot-machine {
   width: 95%;
@@ -302,7 +311,7 @@ span {
 .reel {
 position: relative;
     float: left;
-    width: 98%;
+    width: 100%;
     height: 10rem;
     line-height: 10rem;
     font-size: 60px;
