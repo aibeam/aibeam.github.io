@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>개미는 뚠뚠</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" th:href="@{assets/favicon.ico}" />
 
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/slick.css" rel="stylesheet">
-        <link href="css/main.css" rel="stylesheet">
+        <link th:href="@{css/styles.css}" rel="stylesheet" />
+        <link th:href="@{css/slick.css}" rel="stylesheet">
+        <link th:href="@{css/main.css}" rel="stylesheet">
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -25,20 +25,20 @@
                         🎉<strong class="wish_first">아이폰13PRO</strong>까지
                         <strong class="wish_first">5일</strong> 남았습니다.✨
                     </span>
-                    <img src="assets/close.png" class="wish_close"/>
+                    <img th:src="@{assets/close.png}" class="wish_close"/>
                 </div>
             </header>
 
             <!--페이지 상단 공통 : logo & nav-->
             <nav class="navbar navbar-expand-md navbar-light bg-primary">
                 <div class="container">
-                    <a id="logo" class="navbar-brand" href="@{/antddun}">개미는 뚠뚠</a>
+                    <a id="logo" class="navbar-brand" th:href="@{/antddun}">개미는 뚠뚠</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mb-lg-0">
-                            <li><a class="nav-link" href="@{/antddun/market}">소소한JOB</a></li>
-                            <li><a class="nav-link" href="@{/antddun/qna}">QnA</a></li>
-                            <li><a class="nav-link" href="@{/antddun/board}">자유게시판</a></li>
+                            <li><a class="nav-link" th:href="@{/antddun/soso}">소소한JOB</a></li>
+                            <li><a class="nav-link" th:href="@{/antddun/qna}">QnA</a></li>
+                            <li><a class="nav-link" th:href="@{/antddun/jayu}">자유게시판</a></li>
                         </ul>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
         </div>
 
         <!--메인 메뉴-->
-        <div class="container-main">
+        <div class="container-main container">
             <div class="row">
 
                 <!--홈 좌측 : 회원정보 / 광고 / 점메추-->
@@ -54,10 +54,10 @@
                     <div class="mb-3 margin-bottom">
                         <div>
                             <button class="button btn_login">
-                                <a href="#">로그인</a>
+                                <a th:href="@{antddun/login}" class="a_white">로그인</a>
                             </button>
                             <button class="button btn_regist">
-                                <a href="#">회원가입</a>
+                                <a th:href="@{antddun/register}" class="a_white">회원가입</a>
                             </button>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                             <div class="slot-machine group">
                                 <div class="reel lunch_menu">떡튀순</div>
                             </div>
-                            <button class="button btn_lunch">메뉴 고르기</button>
+                            <button class="button btn_lunch a_white">메뉴 고르기</button>
                         </div>
 
                         <div class="margin-top">
@@ -96,35 +96,35 @@
                                         <div class="column small-11 small-centered">
                                             <section class="visual" src="assets/sosojob_cate/it.jpeg">
                                                 <div class="slick-card">
-                                                    <a href="#">IT</a>
+                                                    <a th:href="@{antddun/soso/it}">IT</a>
                                                     <img class="cate-thumbnail" src="assets/sosojob_cate/it.jpeg"/>
                                                 </div>
                                                 <div class="slick-card">
-                                                    <a href="#">디자인·설계</a>
+                                                    <a th:href="@{antddun/soso/design}">디자인·설계</a>
                                                     <img class="cate-thumbnail" src="assets/sosojob_cate/design.jpeg"/>
                                                 </div>
                                                 <div class="slick-card">
-                                                    <a href="#">미디어</a>
+                                                    <a th:href="@{antddun/soso/media}">미디어</a>
                                                     <img class="cate-thumbnail" src="assets/sosojob_cate/media.jpeg"/>
                                                 </div>
                                                 <div class="slick-card">
-                                                    <a href="#">번역</a>
+                                                    <a th:href="@{antddun/soso/translate}">번역</a>
                                                     <img class="cate-thumbnail" src="assets/sosojob_cate/translate.png"/>
                                                 </div>
                                                 <div class="slick-card">
-                                                    <a href="#">문서작업</a>
+                                                    <a th:href="@{antddun/soso/document}">문서작업</a>
                                                     <img class="cate-thumbnail" src="assets/sosojob_cate/document.jpeg"/>
                                                 </div>
                                                 <div class="slick-card">
-                                                    <a href="#">마케팅</a>
+                                                    <a th:href="@{antddun/soso/marketing}">마케팅</a>
                                                     <img class="cate-thumbnail" src="assets/sosojob_cate/marketing.jpeg"/>
                                                 </div>
                                                 <div class="slick-card">
-                                                    <a href="#">취업·이직</a>
+                                                    <a th:href="@{antddun/soso/work}">취업·이직</a>
                                                     <img class="cate-thumbnail" src="assets/sosojob_cate/resume.jpeg"/>
                                                 </div>
                                                 <div class="slick-card">
-                                                    <a href="#">실무교육</a>
+                                                    <a th:href="@{antddun/soso/edu}">실무교육</a>
                                                     <img class="cate-thumbnail" src="assets/sosojob_cate/workshop.jpeg"/>
                                                 </div>
                                             </section>
@@ -137,17 +137,19 @@
                         <section class="card mg_bottom">
                             <div class="card-header">
                                 <h3 class="boardlist">QnA</h3>
-                                <span class="more"><a href="@{/antddun/qna}">더보기</a></span>
+                                <span class="more"><a th:href="@{/antddun/qna}">더보기</a></span>
                             </div>
                             <div class="card-body">
                                 <table class="table" style="table-layout: fixed">
                                     <tbody>
                                     <tr>
-                                        <td class="category"><span class="tag_b">웹개발</span></td>
-                                        <td style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
-                                        <td class="data"><img src="assets/coins.png" width="19"> 150</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                        <td class="category"><span class="tag_b" th:name="@{#}">웹개발</span></td>
+                                        <td style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">
+                                            <a th:name="@{#}" th:src="@{#}">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</a>
+                                        </td>
+                                        <td class="data" th:name="@{#}"><img src="assets/coins.png" width="19"> 150</td>
+                                        <td class="data" th:name="@{#}"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" th:name="@{#}"><img src="assets/messenger.png" width="18"> 5</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -157,18 +159,20 @@
                         <section class="card mg_bottom">
                             <div class="card-header">
                                 <h3 class="boardlist">내일이면 사라져요!</h3>
-                                <span class="more"><a href="@{/antddun/qna}">더보기</a></span>
+                                <span class="more"><a th:href="@{/antddun/qna}">더보기</a></span>
                             </div>
                             <div class="card-body">
                                 <table class="table" style="table-layout: fixed">
                                     <tbody>
                                     <tr>
-                                        <td class="peong">💣</td>
-                                        <td class="category"><span class="tag_b">소곤소곤</span></td>
-                                        <td class="title" style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
-                                        <td class="data"><img src="assets/heart.png" width="19"> 150</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                        <td class="peong" th:name="@{#}">💣</td>
+                                        <td class="category"><span class="tag_b" th:name="@{#}">소곤소곤</span></td>
+                                        <td class="title" style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">
+                                            <a th:name="@{#}" th:src="@{#}">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</a>
+                                        </td>
+                                        <td class="data" th:name="@{#}"><img src="assets/heart.png" width="19"> 150</td>
+                                        <td class="data" th:name="@{#}"><img src="assets/eye.png" width="20"> 67</td>
+                                        <td class="data" th:name="@{#}"><img src="assets/messenger.png" width="18"> 5</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -178,15 +182,17 @@
                         <section class="card mg_bottom">
                             <div class="card-header">
                                 <h3 class="boardlist">자유 게시판</h3>
-                                <span class="more"><a href="@{/antddun/qna}">더보기</a></span>
+                                <span class="more"><a th:href="@{/antddun/qna}">더보기</a></span>
                             </div>
                             <div class="card-body">
                                 <table class="table" style="table-layout: fixed">
                                     <tbody>
                                     <tr>
-                                        <td class="peong">💣</td>
-                                        <td class="category"><span class="tag_b">소곤소곤</span></td>
-                                        <td style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</td>
+                                        <td class="peong" th:name="@{#}">💣</td>
+                                        <td class="category"><span class="tag_b" th:name="@{#}">소곤소곤</span></td>
+                                        <td style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">
+                                            <a th:name="@{#}" th:src="@{#}">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</a>
+                                        </td>
                                         <td class="data"><img src="assets/heart.png" width="19"> 150</td>
                                         <td class="data"><img src="assets/eye.png" width="20"> 67</td>
                                         <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
@@ -205,7 +211,7 @@
                                 <div class="slot-machine group">
                                     <div class="reel lunch_menu"></div>
                                 </div>
-                                <button class="button btn_lunch">메뉴 고르기</button>
+                                <button class="button btn_lunch a_white">메뉴 고르기</button>
                             </div>
                         </div>
 

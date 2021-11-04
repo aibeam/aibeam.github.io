@@ -10,10 +10,12 @@
 }
 
 .slick-card {
-    background: #5D4B1D;
+    font-family: ELAND_Choice_M;
+    font-weight: bold;
+    background: #ededed;
     border-radius: 10px;
     margin:5px 10px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 40px;
     text-align: center;
     overflow:hidden;
