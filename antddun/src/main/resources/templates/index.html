@@ -7,10 +7,11 @@
         <meta name="author" content="" />
         <title>개미는 뚠뚠</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
         <link href="css/styles.css" rel="stylesheet" />
-        <!--slick slider-->
-        <link href="css/slick/slick.css" rel="stylesheet">
-        <link href="css/slick/slick-theme.css" rel="stylesheet">
+        <link href="css/slick.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     </head>
@@ -19,11 +20,17 @@
         <div id="fixed">
             <!--로그인 정보에 따라 노출 유무 결정-->
             <header>
-                <div class="wish login">🎉<strong>아이폰13PRO</strong>까지 <strong>5일</strong> 남았습니다.✨</div>
+                <div class="wish">
+                    <span class="wish_first">
+                        🎉<strong class="wish_first">아이폰13PRO</strong>까지
+                        <strong class="wish_first">5일</strong> 남았습니다.✨
+                    </span>
+                    <img src="assets/close.png" class="wish_close"/>
+                </div>
             </header>
 
             <!--페이지 상단 공통 : logo & nav-->
-            <nav class="menu navbar navbar-expand-md navbar-light bg-primary">
+            <nav class="navbar navbar-expand-md navbar-light bg-primary">
                 <div class="container">
                     <a id="logo" class="navbar-brand" href="@{/antddun}">개미는 뚠뚠</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -39,24 +46,24 @@
         </div>
 
         <!--메인 메뉴-->
-        <div class="box container">
+        <div class="container-main">
             <div class="row">
 
                 <!--홈 좌측 : 회원정보 / 광고 / 점메추-->
                 <div class="col-lg-3">
-                    <div class="mb-3 menuMargin">
+                    <div class="mb-3 margin-bottom">
                         <div>
-                            <button class="button btn_line login">
-                                <a href="@{/member/login}">로그인</a>
+                            <button class="button btn_login">
+                                <a href="#">로그인</a>
                             </button>
-                            <button class="button btn_full login">
-                                <a href="@{/member/register}">회원가입</a>
+                            <button class="button btn_regist">
+                                <a href="#">회원가입</a>
                             </button>
                         </div>
                     </div>
 
                     <div class="fullsize">
-                        <div class="mb-3 menuMargin">
+                        <div class="mb-3 margin-top margin-bottom">
                             <h4>오늘 점심메뉴는?</h4>
                             <div class="slot-machine group">
                                 <div class="reel">떡튀순</div>
@@ -64,15 +71,16 @@
                             <button class="button btn_lunch">메뉴 고르기</button>
                         </div>
 
-                        <div class="card mb-3">
-                            <img src="http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg" />
-                        </div>
+                        <div class="margin-top">
+                            <div class="card mb-3">
+                                <img src="http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg" />
+                            </div>
 
-                        <div class="card mb-3">
-                            <img src="http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg" />
+                            <div class="card mb-3">
+                                <img src="http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg" />
+                            </div>
                         </div>
                     </div>
-
                 </div>
 
                 <!--홈 우측 : 게시물 리스트-->
@@ -87,16 +95,16 @@
                                     <div class="row">
                                         <div class="column small-11 small-centered">
                                             <section class="visual">
-                                                <div style="background: orange; height: 160px; margin:5px;"><a href="#">1</a></div>
-                                                <div style="background: orange; height: 160px; margin:5px;"><a href="#">2</a></div>
-                                                <div style="background: orange; height: 160px; margin:5px;"><a href="#">3</a></div>
-                                                <div style="background: orange; height: 160px; margin:5px;"><a href="#">4</a></div>
-                                                <div style="background: orange; height: 160px; margin:5px;"><a href="#">5</a></div>
-                                                <div style="background: orange; height: 160px; margin:5px;"><a href="#">6</a></div>
-                                                <div style="background: orange; height: 160px; margin:5px;"><a href="#">7</a></div>
-                                                <div style="background: orange; height: 160px; margin:5px;"><a href="#">8</a></div>
-                                                <div style="background: orange; height: 160px; margin:5px;"><a href="#">9</a></div>
-                                                <div style="background: orange; height: 160px; margin:5px;"><a href="#">더보기</a></div>
+                                                <div class="slick-card"><a href="#">1</a></div>
+                                                <div class="slick-card"><a href="#">2</a></div>
+                                                <div class="slick-card"><a href="#">3</a></div>
+                                                <div class="slick-card"><a href="#">4</a></div>
+                                                <div class="slick-card"><a href="#">5</a></div>
+                                                <div class="slick-card"><a href="#">6</a></div>
+                                                <div class="slick-card"><a href="#">7</a></div>
+                                                <div class="slick-card"><a href="#">8</a></div>
+                                                <div class="slick-card"><a href="#">9</a></div>
+                                                <div class="slick-card" style="height: 160px;"><a href="#">더보기</a></div>
                                             </section>
                                         </div>
                                     </div>
@@ -166,11 +174,11 @@
                             </div>
                         </section>
 
-                        <div class="mbsize">
-                            <div class="card mb-3">
+                        <div class="mbsize margin-top">
+                            <div class="card mb-3 ">
                                 <img src="http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg" />
                             </div>
-                            <div class="mb-3 menuMargin">
+                            <div class="mb-3 margin-top margin-bottom">
                                 <h4>오늘 점심메뉴는?</h4>
                                 <div class="slot-machine group">
                                     <div class="reel">떡튀순</div>
@@ -195,6 +203,12 @@
         <script src="js/scripts.js"></script>
 
         <script>
+            <!--WishList CLose JS-->
+            $('.wish_close').on('click', function(){
+                $('.wish').hide();
+                $('.container-main').css("margin", '9rem 2.3rem 2.5rem 2.3rem');
+            });
+
             <!--slick slider JS-->
             $('.visual').slick({
               slidesToShow: 5,
@@ -225,6 +239,7 @@
             });
 
             <!--Lunch slot JS-->
+            
 
         </script>
     </body>
