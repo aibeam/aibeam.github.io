@@ -14,6 +14,10 @@
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<!--        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>-->
+        <script th:src="@{js/jquery.easing.1.3.js}" type="text/javascript" charset="utf-8"></script>
+        <script th:src="@{js/jquery.jSlots.min.js}" type="text/javascript" charset="utf-8"></script>
     </head>
     <body>
     <div>
@@ -65,10 +69,42 @@
                     <div class="fullsize">
                         <div class="mb-3 margin-top margin-bottom">
                             <h4 class="lunch_title">오늘 점심메뉴는?</h4>
-                            <div class="slot-machine group">
-                                <div class="reel lunch_menu">떡튀순</div>
+                            <div class="lunch_menu">
+                                <div class="slot">
+                                    <ul class="slotRun">
+                                       <li class="lunch_menu">불고기</li>
+                                       <li class="lunch_menu">쌈밥</li>
+                                       <li class="lunch_menu">볶음밥</li>
+                                       <li class="lunch_menu">초밥</li>
+                                       <li class="lunch_menu">해장국</li>
+                                       <li class="lunch_menu">비빔밥</li>
+                                       <li class="lunch_menu">칼국수</li>
+                                       <li class="lunch_menu">라멘</li>
+                                       <li class="lunch_menu">덮밥</li>
+                                       <li class="lunch_menu">돈까스</li>
+                                       <li class="lunch_menu">냉면</li>
+                                       <li class="lunch_menu">우동</li>
+                                       <li class="lunch_menu">갈비탕</li>
+                                       <li class="lunch_menu">도시락</li>
+                                       <li class="lunch_menu">샐러드</li>
+                                       <li class="lunch_menu">햄버거</li>
+                                       <li class="lunch_menu">김밥</li>
+                                       <li class="lunch_menu">떡튀순</li>
+                                       <li class="lunch_menu">카레</li>
+                                       <li class="lunch_menu">찌개류</li>
+                                       <li class="lunch_menu">청국장</li>
+                                       <li class="lunch_menu">삼계탕</li>
+                                       <li class="lunch_menu">짜장면</li>
+                                       <li class="lunch_menu">짬뽕</li>
+                                       <li class="lunch_menu">파스타</li>
+                                       <li class="lunch_menu">리조또</li>
+                                       <li class="lunch_menu">쌀국수</li>
+                                       <li class="lunch_menu">찜닭</li>
+                                       <li class="lunch_menu">팟타이</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <button class="button btn_lunch a_white">메뉴 고르기</button>
+                            <input type="button" class="button btn_lunch playNormal a_white" value="메뉴 고르기"/>
                         </div>
 
                         <div class="margin-top">
@@ -206,12 +242,45 @@
                             <div class="card mb-3 ">
                                 <img src="http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg" />
                             </div>
+
                             <div class="mb-3 margin-top margin-bottom">
                                 <h4 class="lunch_title">오늘 점심메뉴는?</h4>
-                                <div class="slot-machine group">
-                                    <div class="reel lunch_menu"></div>
+                                <div class="lunch_menu">
+                                    <div class="slot">
+                                        <ul class="slotRun">
+                                            <li class="lunch_menu">불고기</li>
+                                            <li class="lunch_menu">쌈밥</li>
+                                            <li class="lunch_menu">볶음밥</li>
+                                            <li class="lunch_menu">초밥</li>
+                                            <li class="lunch_menu">해장국</li>
+                                            <li class="lunch_menu">비빔밥</li>
+                                            <li class="lunch_menu">칼국수</li>
+                                            <li class="lunch_menu">라멘</li>
+                                            <li class="lunch_menu">덮밥</li>
+                                            <li class="lunch_menu">돈까스</li>
+                                            <li class="lunch_menu">냉면</li>
+                                            <li class="lunch_menu">우동</li>
+                                            <li class="lunch_menu">갈비탕</li>
+                                            <li class="lunch_menu">도시락</li>
+                                            <li class="lunch_menu">샐러드</li>
+                                            <li class="lunch_menu">햄버거</li>
+                                            <li class="lunch_menu">김밥</li>
+                                            <li class="lunch_menu">떡튀순</li>
+                                            <li class="lunch_menu">카레</li>
+                                            <li class="lunch_menu">찌개류</li>
+                                            <li class="lunch_menu">청국장</li>
+                                            <li class="lunch_menu">삼계탕</li>
+                                            <li class="lunch_menu">짜장면</li>
+                                            <li class="lunch_menu">짬뽕</li>
+                                            <li class="lunch_menu">파스타</li>
+                                            <li class="lunch_menu">리조또</li>
+                                            <li class="lunch_menu">쌀국수</li>
+                                            <li class="lunch_menu">찜닭</li>
+                                            <li class="lunch_menu">팟타이</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <button class="button btn_lunch a_white">메뉴 고르기</button>
+                                <input type="button" class="button btn_lunch playNormal a_white" value="메뉴 고르기"/>
                             </div>
                         </div>
 
@@ -268,38 +337,9 @@
             });
 
             <!--Lunch slot JS-->
-            /* $(document).ready(function() {
-                var tMax = 4000,
-                height = 700,
-                speeds = [],
-                r = [],
-                target = 16545,
-                reading = 12345,
-                sTarget = target.toString(),
-                sReadgin = reading.toString(),
-                numberOutput = [],
-                reel = ['불고기', '쌈밥', '낚지볶음', '초밥', '해장국', '두루치기', '칼국수',
-                        '비빔밥', '라멘', '덮밥', '돈까스', '냉면/우동', '부대찌개', '샤브샤브',
-                        '갈비탕', '도시락', '샐러드', '샌드위치', '김밥', '떡튀순', '카레',
-                        '된장찌개', '김치찌개', '청국장', '삼계탕', '짜장면', '스파게티',
-                        '쌀국수', '찜닭', '짬뽕', '햄버거', '팟타이', '볶음밥', '카레'],
-                $reel,
-                start;
-
-                function init(){
-                    $reel = $('.reel').each(function(i, el) {
-                       el.innerHTML = '<div class="reel-holder"><p>' + reels[i].join('</p><p>')
-                        + '</p></div><div class="reel-holder"><p>' + reels[i].join('</p><p>')
-                         + '</p></div><div class="reel-door">?</div>'
-                    });
-                    $('.btn_lunch').click(action);
-                }
-
-                function action(){
-                    if (start !== undefined) return;
-                    $('.reel-door').fadeOut(100);
-                }
-            }); */
+            $('.slotRun').jSlots({
+                spinner: '.playNormal'
+            });
         </script>
     </body>
 </html>

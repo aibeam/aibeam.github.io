@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 50px;
+}
+
+.jSlots-wrapper {
+    padding-left: 20px;
+    overflow: hidden;
+    height: 50px;
+    width: 100px;
+    display: inline-block; /* to size correctly, can use float too, or width*/
+    border: 1px solid #999;
+}

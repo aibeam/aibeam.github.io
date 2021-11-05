@@ -65,7 +65,7 @@ li {
 
 .btn_login {
    width: 95%;
-   background: #F9C74F;
+   background: #f9c64f;
 }
 
 .btn_regist {
@@ -213,7 +213,6 @@ strong.wish_first {
 
 
 a:link{
-    color: #2b2b2b;
     text-decoration: none;
 }
 
@@ -304,8 +303,10 @@ span {
 
 .lunch_menu {
     font-family: ELAND_Choice_M;
-    font-size: 3rem;
+    font-size: 3.06rem;
     font-weight: 400;
+    text-align: center;
+    line-height: 2.52;
 }
 
 .slot-machine {
@@ -331,7 +332,7 @@ position: relative;
 .btn_lunch {
     display: block;
     width: 95%;
-    background: #FFDF51;
+    background: #F9C74F;
 }
 
 
@@ -370,14 +371,16 @@ position: relative;
 
 }
 .slot {
-  position: absolute;
-  width: 90px;
-  height: 80px;
+  position: relative;
+  width: 100%;
+  height: 130px;
   box-sizing: border-box;
   opacity: 0.9;
   color: rgba(0,0,0,0.9);
   background: #fff;
-  border: solid 2px #000;
+  border: solid 3px #9c9c9c;
+  border-radius: 10px;
+  overflow: hidden;
   -webkit-backface-visibility: hidden;
      -moz-backface-visibility: hidden;
           backface-visibility: hidden;
