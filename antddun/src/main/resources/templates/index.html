@@ -12,8 +12,8 @@
         <link th:href="@{css/slick.css}" rel="stylesheet">
         <link th:href="@{css/main.css}" rel="stylesheet">
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script th:src="@{https://code.jquery.com/jquery-3.6.0.min.js}"></script>
+        <script type="text/javascript" th:src="@{http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js}"></script>
 
 <!--        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>-->
         <script th:src="@{js/jquery.easing.1.3.js}" type="text/javascript" charset="utf-8"></script>
@@ -24,7 +24,7 @@
         <div id="fixed">
             <!--로그인 정보에 따라 노출 유무 결정-->
             <header>
-                <div class="wish">
+                <div class="wish" style="display:none;">
                     <span class="wish_first">
                         🎉<strong class="wish_first">아이폰13PRO</strong>까지
                         <strong class="wish_first">5일</strong> 남았습니다.✨
@@ -40,9 +40,9 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mb-lg-0">
-                            <li><a class="nav-link" th:href="@{/antddun/soso}">소소한JOB</a></li>
-                            <li><a class="nav-link" th:href="@{/antddun/qna}">QnA</a></li>
-                            <li><a class="nav-link" th:href="@{/antddun/jayu}">자유게시판</a></li>
+                            <li><a class="nav-link nav_li" th:href="@{/antddun/soso}">소소한JOB</a></li>
+                            <li><a class="nav-link nav_li" th:href="@{/antddun/qna}">QnA</a></li>
+                            <li><a class="nav-link nav_li" th:href="@{/antddun/jayu}">자유게시판</a></li>
                         </ul>
                     </div>
                 </div>
@@ -56,18 +56,51 @@
                 <!--홈 좌측 : 회원정보 / 광고 / 점메추-->
                 <div class="col-lg-3">
                     <div class="mb-3 margin-bottom">
-                        <div>
+                        <!--Before Login-->
+                        <div id="unlogin">
                             <button class="button btn_login">
-                                <a th:href="@{antddun/login}" class="a_white">로그인</a>
+                                <a th:href="@{#}" class="a_white">로그인</a>
                             </button>
                             <button class="button btn_regist">
                                 <a th:href="@{antddun/register}" class="a_white">회원가입</a>
                             </button>
                         </div>
+
+                        <!--After Login-->
+                        <div id="login" style="display:none;">
+                            <div id="user_info">
+                                <div class="user_item">
+                                    <img th:src="@{assets/user_img/1.png}" class="user_img"/>
+                                </div>
+                                <div class="user_item user_id">
+                                    <span class="bold">개발 </span>
+                                    <span class="bold">N년차 </span>
+                                    <span class="bold">김개미</span><br>
+                                    <span class="gray"><a>내정보</a></span>
+                                    <button class="btn_logout">로그아웃</button>
+                                </div>
+                                <div id="user_nav">
+                                    <ul class="user_nav">
+                                        <li>알림</li>
+                                        <li>쪽지</li>
+                                        <li>일급기밀</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="user_goal">
+                                <span>달성율</span>
+                                <table>
+                                    <tr>
+                                        <td>아이패드 에어4</td>
+                                        <td>D-5</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="fullsize">
-                        <div class="mb-3 margin-top margin-bottom">
+                        <div class="mb-3 margin-bottom">
                             <h4 class="lunch_title">오늘 점심메뉴는?</h4>
                             <div class="lunch_menu">
                                 <div class="slot">
@@ -107,13 +140,13 @@
                             <input type="button" class="button btn_lunch playNormal a_white" value="메뉴 고르기"/>
                         </div>
 
-                        <div class="margin-top">
+                        <div class="margin-bottom">
                             <div class="card mb-3">
-                                <img src="http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg" />
+                                <img th:src="@{http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg}" />
                             </div>
 
                             <div class="card mb-3">
-                                <img src="http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg" />
+                                <img th:src="@{http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg}" />
                             </div>
                         </div>
                     </div>
@@ -130,38 +163,38 @@
                                 <div id="page">
                                     <div class="row">
                                         <div class="column small-11 small-centered">
-                                            <section class="visual" src="assets/sosojob_cate/it.jpeg">
+                                            <section class="visual" th:src="@{assets/sosojob_cate/it.jpeg}">
                                                 <div class="slick-card">
                                                     <a th:href="@{antddun/soso/it}">IT</a>
-                                                    <img class="cate-thumbnail" src="assets/sosojob_cate/it.jpeg"/>
+                                                    <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/it.jpeg}"/>
                                                 </div>
                                                 <div class="slick-card">
                                                     <a th:href="@{antddun/soso/design}">디자인·설계</a>
-                                                    <img class="cate-thumbnail" src="assets/sosojob_cate/design.jpeg"/>
+                                                    <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/design.jpeg}"/>
                                                 </div>
                                                 <div class="slick-card">
                                                     <a th:href="@{antddun/soso/media}">미디어</a>
-                                                    <img class="cate-thumbnail" src="assets/sosojob_cate/media.jpeg"/>
+                                                    <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/media.jpeg}"/>
                                                 </div>
                                                 <div class="slick-card">
                                                     <a th:href="@{antddun/soso/translate}">번역</a>
-                                                    <img class="cate-thumbnail" src="assets/sosojob_cate/translate.png"/>
+                                                    <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/translate.png}"/>
                                                 </div>
                                                 <div class="slick-card">
                                                     <a th:href="@{antddun/soso/document}">문서작업</a>
-                                                    <img class="cate-thumbnail" src="assets/sosojob_cate/document.jpeg"/>
+                                                    <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/document.jpeg}"/>
                                                 </div>
                                                 <div class="slick-card">
                                                     <a th:href="@{antddun/soso/marketing}">마케팅</a>
-                                                    <img class="cate-thumbnail" src="assets/sosojob_cate/marketing.jpeg"/>
+                                                    <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/marketing.jpeg}"/>
                                                 </div>
                                                 <div class="slick-card">
                                                     <a th:href="@{antddun/soso/work}">취업·이직</a>
-                                                    <img class="cate-thumbnail" src="assets/sosojob_cate/resume.jpeg"/>
+                                                    <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/resume.jpeg}"/>
                                                 </div>
                                                 <div class="slick-card">
                                                     <a th:href="@{antddun/soso/edu}">실무교육</a>
-                                                    <img class="cate-thumbnail" src="assets/sosojob_cate/workshop.jpeg"/>
+                                                    <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/workshop.jpeg}"/>
                                                 </div>
                                             </section>
                                         </div>
@@ -183,9 +216,9 @@
                                         <td style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">
                                             <a th:name="@{#}" th:src="@{#}">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</a>
                                         </td>
-                                        <td class="data" th:name="@{#}"><img src="assets/coins.png" width="19"> 150</td>
-                                        <td class="data" th:name="@{#}"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data" th:name="@{#}"><img src="assets/messenger.png" width="18"> 5</td>
+                                        <td class="data" th:name="@{#}"><img th:src="@{assets/coins.png}" width="19"> 150</td>
+                                        <td class="data" th:name="@{#}"><img th:src="@{assets/eye.png}" width="20"> 67</td>
+                                        <td class="data" th:name="@{#}"><img th:src="@{assets/messenger.png}" width="18"> 5</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -206,9 +239,9 @@
                                         <td class="title" style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">
                                             <a th:name="@{#}" th:src="@{#}">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</a>
                                         </td>
-                                        <td class="data" th:name="@{#}"><img src="assets/heart.png" width="19"> 150</td>
-                                        <td class="data" th:name="@{#}"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data" th:name="@{#}"><img src="assets/messenger.png" width="18"> 5</td>
+                                        <td class="data" th:name="@{#}"><img th:src="@{assets/heart.png}" width="19"> 150</td>
+                                        <td class="data" th:name="@{#}"><img th:src="@{assets/eye.png}" width="20"> 67</td>
+                                        <td class="data" th:name="@{#}"><img th:src="@{assets/messenger.png}" width="18"> 5</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -229,9 +262,9 @@
                                         <td style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">
                                             <a th:name="@{#}" th:src="@{#}">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</a>
                                         </td>
-                                        <td class="data"><img src="assets/heart.png" width="19"> 150</td>
-                                        <td class="data"><img src="assets/eye.png" width="20"> 67</td>
-                                        <td class="data"><img src="assets/messenger.png" width="18"> 5</td>
+                                        <td class="data"><img th:src="@{assets/heart.png}" width="19"> 150</td>
+                                        <td class="data"><img th:src="@{assets/eye.png}" width="20"> 67</td>
+                                        <td class="data"><img th:src="@{assets/messenger.png}" width="18"> 5</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -240,7 +273,7 @@
 
                         <div class="mbsize margin-top">
                             <div class="card mb-3 ">
-                                <img src="http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg" />
+                                <img th:src="@{http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg}" />
                             </div>
 
                             <div class="mb-3 margin-top margin-bottom">
@@ -296,15 +329,23 @@
 
     </div>
         <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js}"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script th:src="@{js/scripts.js}"></script>
 
         <script>
+            <!--Login JS-->
+            $('.btn_login').on('click', function(){
+                $('#unlogin').hide();
+                $('.wish').show();
+                $('.container-main').css("margin-top", '11.5rem');
+                $('#login').show();
+            });
+
             <!--WishList CLose JS-->
             $('.wish_close').on('click', function(){
                 $('.wish').hide();
-                $('.container-main').css("margin", '9rem 2.3rem 2.5rem 2.3rem');
+                $('.container-main').css("margin-top", '9rem');
             });
 
             <!--slick slider JS-->
