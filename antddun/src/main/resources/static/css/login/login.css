@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.loginBox {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  margin-left: -200px;
+  margin-top: -95px;
+}
+
+
+fieldset {
+  width: 400px;
+  height: 365px;
+  border-radius: 20px;
+  border: none;
+  box-shadow : 0px 0px 10px 0px rgb(249, 179, 0) ;
+}
+
+header {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-family: 'Jua', sans-serif;
+}
+
+.input-box{
+    position:relative;
+    margin:10px 20px;
+    text-align: center;
+}
+.input-box > input{
+    background:transparent;
+    border:none;
+    border-bottom: solid 1px #ccc;
+    padding:20px 0px 5px 0px;
+    font-size:12pt;
+    width:70%;
+}
+
+input::placeholder{
+    color:transparent;
+
+}
+
+input:placeholder-shown + label{
+    color:#aaa;
+    font-size:12pt;
+    top:15px;
+    margin-left: 55px;
+
+}
+input:focus + label, label{
+    color:#8aa1a1;
+    font-size:9pt;
+    pointer-events: none;
+    position: absolute;
+    left:0px;
+    top:0px;
+    transition: all 0.2s ease ;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    margin-left: 55px;
+}
+
+input:focus, input:not(:placeholder-shown){
+    border-bottom: solid 1px #8aa1a1;
+    outline:none;
+}
+
+.notice {
+  font-size:7px;
+  color: red;
+  text-align: center;
+}
+
+#btnSubmit{
+    background-color: rgb(249, 179, 0);
+    border:none;
+    color:white;
+    border-radius: 5px;
+    width:67%;
+    height:35px;
+    font-size: 14pt;
+    margin-top:15px;
+    margin-left: 64px;
+    margin-bottom: 10px;
+}
+
+a{
+  text-decoration: none;
+  color: grey;
+}
+
+.social{
+  margin-top: 6px;
+  margin-left:150px;
+}
+
+.find {
+  font-size: 8px;
+  margin-top: 10px;
+  margin-left:100px;
+}
+
+.find li {
+  float: left;
+  list-style: none;
+}
+
+.find li::before{
+  padding-left: 5px;
+  margin-right: 5px;
+  color: gray;
+  content:"|";
+}
+.find li:first-child::before{
+  content: "";
+}

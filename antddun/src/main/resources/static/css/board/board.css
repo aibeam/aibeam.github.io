@@ -1,0 +1,57 @@
+/* register page style */
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ELAND_Choice_M';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Choice_M.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.form-group{
+    margin: 10px 0;
+}
+
+.btn-primary{
+    &:hover {
+        background-color: lighten(#f9c64f, 5%);
+    }
+    margin: 10px 0;
+    float:right;
+    border: none;
+    background: #f9c64f;
+    font-family: 'ELAND_Choice_M';
+}
+ol {list-style:none;}
+ ol li {
+ 	display: inline-block;
+ 	width: 80px;
+ 	text-align:center;
+ 	cursor: pointer;
+ 	font-size: 16px;
+ 	font-weight: bold;
+        border-radius: 5px;
+        height: 28px;
+        width: 120px;
+        color: #919191;
+        border: 2px solid #e0e0e0;
+        text-align: center;
+
+ 	}
+label{
+ 	width: 60px;
+ 	font-size: 16px;
+ 	font-family: 'ELAND_Choice_M';
+ 	}
+.ddun{
+width: 150px;
+display: inline-block;
+}
+#ddun{
+width:2rem;
+}

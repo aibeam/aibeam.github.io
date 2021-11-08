@@ -1,0 +1,202 @@
+    @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+    /* COMMON */
+/*    html,body {height: 100%; magin: 0;}
+    .join_container {
+        border: none;
+        border-radius: 20px;
+        position: absolute;
+        width: 400px;
+        height: 100%;
+        left: 50%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -400px;
+        text-align: center;
+   }*/
+
+   .join_container { margin: 0 auto}
+
+   #title {
+        font-family: 'Jua', sans-serif;
+        font-size: 60px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+   .input-box {
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        width: 400px;
+        border: 1px solid rgb(220,220,220);
+        height: 50px;
+        padding: 0;
+        line-height: 48px;
+        border-radius: 3px;
+   }
+
+   input {
+        border: none;
+        width: 330px;
+        height: 43px;
+        vertical-align: middle;
+        padding-right: 10px;
+                padding-left: 20px;
+
+   }
+
+    input:focus {outline: none;}
+
+    select{
+        width: 195px;
+        height: 50px;
+        border: 1px solid rgb(220,220,220)
+        border-radius: 3px;
+        margin-top: 10px;
+        padding-left: 10px;
+        margin-bottom: 20px;
+
+    }
+
+    label {
+        float: left;
+    }
+
+    .resultBox {
+        float:right;
+        padding-top: 8px;
+    }
+
+    /* 아이디 */
+
+/*     .id-box {
+         display: inline-block;
+         margin: 0 auto;
+         margin-top: 10px;
+         width: 220px;
+         border: 1px solid rgb(220,220,220);
+         height: 40px;
+         padding: 0;
+         line-height: 38px;
+         border-radius: 3px; :
+     }*/
+
+     .idCheckResult {
+         float: right;
+     }
+
+   .name-box {
+        display: inline-block;
+        border: 1px solid rgb(220,220,220);
+        width: 195px;
+        height: 50px;
+        margin-top: 10px;
+        line-height: 48px;
+        border-radius: 3px;
+        margin-bottom: 20px;
+
+   }
+
+    /* NAME */
+
+   .name {
+        width: 150px;
+        height: 43px;
+        vertical-align: middle;
+        padding-left: 20px;
+   }
+
+   .span-box { vertical-align: middle; }
+
+   .pass, #username{ padding-right: 30px; }
+
+    /* MOBILE */
+
+   #phoneNum {
+        width: 250px;
+        padding-right:30px;
+        padding-left: 20px;
+
+   }
+
+   .phoneNum-box {
+           display: inline-block;
+           margin: 0 auto;
+           margin-top: 10px;
+           margin-bottom: 20px;
+
+           width: 320px;
+           border: 1px solid rgb(220,220,220);
+           height: 50px;
+           padding: 0;
+           line-height: 48px;
+           border-radius: 3px;
+      }
+
+    #btnPhone {
+        border: none;
+        background-color: rgb(241,196,15);
+        color: #fff;
+        height: 55px;
+        width: 70px;
+        pointer: cursor;
+        border-radius: 3px;
+        border: 1px solid rgb(220,220,220);
+    }
+
+    /* TOOL TIP*/
+
+   .tooltip {
+        position: relative;
+        display: inline-block;
+
+   }
+
+   .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: rgb(241,196,15);
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        font-weight: bold;
+
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        left: 300%;
+        margin-left: -60%;
+   }
+
+   .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent rgb(241,196,15) transparent transparent;
+   }
+
+   .tooltip:hover .tooltiptext { visibility: visible; }
+
+   #recommendUser #salary { width: 100px; }
+
+   .btnJoin {
+        margin-top: 10px;
+        border: none;
+        background-color: rgb(241,196,15);
+        color: #fff;
+        width: 400px;
+        height: 50px;
+        font-size: 15pt;
+        font-weight: bold;
+        margin-bottom: 20px;
+   }
+
+
+

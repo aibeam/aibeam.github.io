@@ -1,344 +1,342 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>개미는 뚠뚠</title>
-        <link rel="icon" type="image/x-icon" th:href="@{assets/favicon.ico}" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>개미는 뚠뚠</title>
+    <link rel="icon" type="image/x-icon" th:href="@{assets/favicon.ico}" />
 
-        <link th:href="@{css/styles.css}" rel="stylesheet" />
-        <link th:href="@{css/slick.css}" rel="stylesheet">
-        <link th:href="@{css/main.css}" rel="stylesheet">
+    <link th:href="@{css/main/styles.css}" rel="stylesheet" />
+    <link th:href="@{css/main/main.css}" rel="stylesheet">
+    <link th:href="@{css/main/slick.css}" rel="stylesheet">
+    <link th:href="@{css/slotmachine.css}" rel="stylesheet">
 
-        <script th:src="@{https://code.jquery.com/jquery-3.6.0.min.js}"></script>
-        <script type="text/javascript" th:src="@{http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js}"></script>
+    <script th:src="@{https://code.jquery.com/jquery-3.6.0.min.js}"></script>
+    <script type="text/javascript" th:src="@{http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js}"></script>
 
-<!--        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>-->
-        <script th:src="@{js/jquery.easing.1.3.js}" type="text/javascript" charset="utf-8"></script>
-        <script th:src="@{js/jquery.jSlots.min.js}" type="text/javascript" charset="utf-8"></script>
-    </head>
-    <body>
-    <div>
-        <div id="fixed">
-            <!--로그인 정보에 따라 노출 유무 결정-->
-            <header>
-                <div class="wish" style="display:none;">
+    <script th:src="@{js/main/jquery.easing.1.3.js}" type="text/javascript" charset="utf-8"></script>
+    <script th:src="@{js/main/jquery.jSlots.min.js}" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div>
+    <div id="fixed">
+        <!--로그인 정보에 따라 노출 유무 결정-->
+        <header>
+            <div class="wish" style="display:none;">
                     <span class="wish_first">
                         🎉<strong class="wish_first">아이폰13PRO</strong>까지
                         <strong class="wish_first">5일</strong> 남았습니다.✨
                     </span>
-                    <img th:src="@{assets/close.png}" class="wish_close"/>
+                <img th:src="@{assets/close.png}" class="wish_close"/>
+            </div>
+        </header>
+
+        <!--페이지 상단 공통 : logo & nav-->
+        <nav class="navbar navbar-expand-md navbar-light bg-primary">
+            <div class="container">
+                <a id="logo" class="navbar-brand" th:href="@{#}">개미는 뚠뚠</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-lg-0">
+                        <li><a class="nav-link nav_li" th:href="@{/sosojob/main}">소소한JOB</a></li>
+                        <li><a class="nav-link nav_li" th:href="@{/QnA/list}">QnA</a></li>
+                        <li><a class="nav-link nav_li" th:href="@{/jayu/list}">자유게시판</a></li>
+                    </ul>
                 </div>
-            </header>
+            </div>
+        </nav>
+    </div>
 
-            <!--페이지 상단 공통 : logo & nav-->
-            <nav class="navbar navbar-expand-md navbar-light bg-primary">
-                <div class="container">
-                    <a id="logo" class="navbar-brand" th:href="@{/antddun}">개미는 뚠뚠</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mb-lg-0">
-                            <li><a class="nav-link nav_li" th:href="@{/antddun/soso}">소소한JOB</a></li>
-                            <li><a class="nav-link nav_li" th:href="@{/antddun/qna}">QnA</a></li>
-                            <li><a class="nav-link nav_li" th:href="@{/antddun/jayu}">자유게시판</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
+    <!--메인 메뉴-->
+    <div class="container-main container">
+        <div class="row">
 
-        <!--메인 메뉴-->
-        <div class="container-main container">
-            <div class="row">
-
-                <!--홈 좌측 : 회원정보 / 광고 / 점메추-->
-                <div class="col-lg-3">
-                    <div class="mb-3 margin-bottom">
-                        <!--Before Login-->
-                        <div id="unlogin">
-                            <button class="button btn_login">
-                                <a th:href="@{#}" class="a_white">로그인</a>
-                            </button>
-                            <button class="button btn_regist">
-                                <a th:href="@{antddun/register}" class="a_white">회원가입</a>
-                            </button>
-                        </div>
-
-                        <!--After Login-->
-                        <div id="login" style="display:none;">
-                            <div id="user_info">
-                                <div class="user_item">
-                                    <img th:src="@{assets/user_img/1.png}" class="user_img"/>
-                                </div>
-                                <div class="user_item user_id">
-                                    <span class="bold">개발 </span>
-                                    <span class="bold">N년차 </span>
-                                    <span class="bold">김개미</span><br>
-                                    <span class="gray"><a>내정보</a></span>
-                                    <button class="btn_logout">로그아웃</button>
-                                </div>
-                                <div id="user_nav">
-                                    <ul class="user_nav">
-                                        <li>알림</li>
-                                        <li>쪽지</li>
-                                        <li>일급기밀</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div id="user_goal">
-                                <span>달성율</span>
-                                <table>
-                                    <tr>
-                                        <td>아이패드 에어4</td>
-                                        <td>D-5</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
+            <!--홈 좌측 : 회원정보 / 광고 / 점메추-->
+            <div class="col-lg-3">
+                <div class="mb-3 margin_bottom">
+                    <!--Before Login-->
+                    <div id="unlogin">
+                        <button class="button btn_login">
+                            <a th:href="@{#}" class="a_white">로그인</a>
+                        </button>
+                        <button class="button btn_regist">
+                            <a th:href="@{/joinPage}" class="a_white">회원가입</a>
+                        </button>
                     </div>
 
-                    <div class="fullsize">
-                        <div class="mb-3 margin-bottom">
-                            <h4 class="lunch_title">오늘 점심메뉴는?</h4>
-                            <div class="lunch_menu">
-                                <div class="slot">
-                                    <ul class="slotRun">
-                                       <li class="lunch_menu">불고기</li>
-                                       <li class="lunch_menu">쌈밥</li>
-                                       <li class="lunch_menu">볶음밥</li>
-                                       <li class="lunch_menu">초밥</li>
-                                       <li class="lunch_menu">해장국</li>
-                                       <li class="lunch_menu">비빔밥</li>
-                                       <li class="lunch_menu">칼국수</li>
-                                       <li class="lunch_menu">라멘</li>
-                                       <li class="lunch_menu">덮밥</li>
-                                       <li class="lunch_menu">돈까스</li>
-                                       <li class="lunch_menu">냉면</li>
-                                       <li class="lunch_menu">우동</li>
-                                       <li class="lunch_menu">갈비탕</li>
-                                       <li class="lunch_menu">도시락</li>
-                                       <li class="lunch_menu">샐러드</li>
-                                       <li class="lunch_menu">햄버거</li>
-                                       <li class="lunch_menu">김밥</li>
-                                       <li class="lunch_menu">떡튀순</li>
-                                       <li class="lunch_menu">카레</li>
-                                       <li class="lunch_menu">찌개류</li>
-                                       <li class="lunch_menu">청국장</li>
-                                       <li class="lunch_menu">삼계탕</li>
-                                       <li class="lunch_menu">짜장면</li>
-                                       <li class="lunch_menu">짬뽕</li>
-                                       <li class="lunch_menu">파스타</li>
-                                       <li class="lunch_menu">리조또</li>
-                                       <li class="lunch_menu">쌀국수</li>
-                                       <li class="lunch_menu">찜닭</li>
-                                       <li class="lunch_menu">팟타이</li>
-                                    </ul>
-                                </div>
+                    <!--After Login-->
+                    <div id="login" style="display:none;">
+                        <div id="user_info">
+                            <div class="user_item">
+                                <img th:src="@{assets/user_img/1.png}" class="user_img"/>
                             </div>
-                            <input type="button" class="button btn_lunch playNormal a_white" value="메뉴 고르기"/>
+                            <div class="user_item user_id">
+                                <span class="bold">개발 </span>
+                                <span class="bold">N년차 </span>
+                                <span class="bold">김개미</span><br>
+                                <span class="gray"><a>내정보</a></span>
+                                <button class="btn_logout">로그아웃</button>
+                            </div>
+                            <div id="user_nav">
+                                <ul class="user_nav">
+                                    <li>알림</li>
+                                    <li>쪽지</li>
+                                    <li>일급기밀</li>
+                                </ul>
+                            </div>
                         </div>
-
-                        <div class="margin-bottom">
-                            <div class="card mb-3">
-                                <img th:src="@{http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg}" />
-                            </div>
-
-                            <div class="card mb-3">
-                                <img th:src="@{http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg}" />
-                            </div>
+                        <div id="user_goal">
+                            <span>달성율</span>
+                            <table>
+                                <tr>
+                                    <td>아이패드 에어4</td>
+                                    <td>D-5</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
 
-                <!--홈 우측 : 게시물 리스트-->
-                <div class="col-lg-9">
-                    <div class="mb-4">
-                        <section class="card mg_bottom">
-                            <div class="card-header">
-                                <h3 class="boardlist">소소한JOB 카테고리</h3>
-                            </div>
-                            <div class="card-body">
-                                <div id="page">
-                                    <div class="row">
-                                        <div class="column small-11 small-centered">
-                                            <section class="visual" th:src="@{assets/sosojob_cate/it.jpeg}">
-                                                <div class="slick-card">
-                                                    <a th:href="@{antddun/soso/it}">IT</a>
-                                                    <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/it.jpeg}"/>
-                                                </div>
-                                                <div class="slick-card">
-                                                    <a th:href="@{antddun/soso/design}">디자인·설계</a>
-                                                    <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/design.jpeg}"/>
-                                                </div>
-                                                <div class="slick-card">
-                                                    <a th:href="@{antddun/soso/media}">미디어</a>
-                                                    <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/media.jpeg}"/>
-                                                </div>
-                                                <div class="slick-card">
-                                                    <a th:href="@{antddun/soso/translate}">번역</a>
-                                                    <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/translate.png}"/>
-                                                </div>
-                                                <div class="slick-card">
-                                                    <a th:href="@{antddun/soso/document}">문서작업</a>
-                                                    <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/document.jpeg}"/>
-                                                </div>
-                                                <div class="slick-card">
-                                                    <a th:href="@{antddun/soso/marketing}">마케팅</a>
-                                                    <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/marketing.jpeg}"/>
-                                                </div>
-                                                <div class="slick-card">
-                                                    <a th:href="@{antddun/soso/work}">취업·이직</a>
-                                                    <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/resume.jpeg}"/>
-                                                </div>
-                                                <div class="slick-card">
-                                                    <a th:href="@{antddun/soso/edu}">실무교육</a>
-                                                    <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/workshop.jpeg}"/>
-                                                </div>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section class="card mg_bottom">
-                            <div class="card-header">
-                                <h3 class="boardlist">QnA</h3>
-                                <span class="more"><a th:href="@{/antddun/qna}">더보기</a></span>
-                            </div>
-                            <div class="card-body">
-                                <table class="table" style="table-layout: fixed">
-                                    <tbody>
-                                    <tr>
-                                        <td class="category"><span class="tag_b" th:name="@{#}">웹개발</span></td>
-                                        <td style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">
-                                            <a th:name="@{#}" th:src="@{#}">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</a>
-                                        </td>
-                                        <td class="data" th:name="@{#}"><img th:src="@{assets/coins.png}" width="19"> 150</td>
-                                        <td class="data" th:name="@{#}"><img th:src="@{assets/eye.png}" width="20"> 67</td>
-                                        <td class="data" th:name="@{#}"><img th:src="@{assets/messenger.png}" width="18"> 5</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </section>
-
-                        <section class="card mg_bottom">
-                            <div class="card-header">
-                                <h3 class="boardlist">내일이면 사라져요!</h3>
-                                <span class="more"><a th:href="@{/antddun/qna}">더보기</a></span>
-                            </div>
-                            <div class="card-body">
-                                <table class="table" style="table-layout: fixed">
-                                    <tbody>
-                                    <tr>
-                                        <td class="peong" th:name="@{#}">💣</td>
-                                        <td class="category"><span class="tag_b" th:name="@{#}">소곤소곤</span></td>
-                                        <td class="title" style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">
-                                            <a th:name="@{#}" th:src="@{#}">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</a>
-                                        </td>
-                                        <td class="data" th:name="@{#}"><img th:src="@{assets/heart.png}" width="19"> 150</td>
-                                        <td class="data" th:name="@{#}"><img th:src="@{assets/eye.png}" width="20"> 67</td>
-                                        <td class="data" th:name="@{#}"><img th:src="@{assets/messenger.png}" width="18"> 5</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </section>
-
-                        <section class="card mg_bottom">
-                            <div class="card-header">
-                                <h3 class="boardlist">자유 게시판</h3>
-                                <span class="more"><a th:href="@{/antddun/qna}">더보기</a></span>
-                            </div>
-                            <div class="card-body">
-                                <table class="table" style="table-layout: fixed">
-                                    <tbody>
-                                    <tr>
-                                        <td class="peong" th:name="@{#}">💣</td>
-                                        <td class="category"><span class="tag_b" th:name="@{#}">소곤소곤</span></td>
-                                        <td style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">
-                                            <a th:name="@{#}" th:src="@{#}">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</a>
-                                        </td>
-                                        <td class="data"><img th:src="@{assets/heart.png}" width="19"> 150</td>
-                                        <td class="data"><img th:src="@{assets/eye.png}" width="20"> 67</td>
-                                        <td class="data"><img th:src="@{assets/messenger.png}" width="18"> 5</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </section>
-
-                        <div class="mbsize margin-top">
-                            <div class="card mb-3 ">
-                                <img th:src="@{http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg}" />
-                            </div>
-
-                            <div class="mb-3 margin-top margin-bottom">
-                                <h4 class="lunch_title">오늘 점심메뉴는?</h4>
-                                <div class="lunch_menu">
-                                    <div class="slot">
-                                        <ul class="slotRun">
-                                            <li class="lunch_menu">불고기</li>
-                                            <li class="lunch_menu">쌈밥</li>
-                                            <li class="lunch_menu">볶음밥</li>
-                                            <li class="lunch_menu">초밥</li>
-                                            <li class="lunch_menu">해장국</li>
-                                            <li class="lunch_menu">비빔밥</li>
-                                            <li class="lunch_menu">칼국수</li>
-                                            <li class="lunch_menu">라멘</li>
-                                            <li class="lunch_menu">덮밥</li>
-                                            <li class="lunch_menu">돈까스</li>
-                                            <li class="lunch_menu">냉면</li>
-                                            <li class="lunch_menu">우동</li>
-                                            <li class="lunch_menu">갈비탕</li>
-                                            <li class="lunch_menu">도시락</li>
-                                            <li class="lunch_menu">샐러드</li>
-                                            <li class="lunch_menu">햄버거</li>
-                                            <li class="lunch_menu">김밥</li>
-                                            <li class="lunch_menu">떡튀순</li>
-                                            <li class="lunch_menu">카레</li>
-                                            <li class="lunch_menu">찌개류</li>
-                                            <li class="lunch_menu">청국장</li>
-                                            <li class="lunch_menu">삼계탕</li>
-                                            <li class="lunch_menu">짜장면</li>
-                                            <li class="lunch_menu">짬뽕</li>
-                                            <li class="lunch_menu">파스타</li>
-                                            <li class="lunch_menu">리조또</li>
-                                            <li class="lunch_menu">쌀국수</li>
-                                            <li class="lunch_menu">찜닭</li>
-                                            <li class="lunch_menu">팟타이</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <input type="button" class="button btn_lunch playNormal a_white" value="메뉴 고르기"/>
+                <div class="fullsize">
+                    <div class="mb-3 margin_top margin_bottom">
+                        <h4 class="lunch_title">오늘 점심메뉴는?</h4>
+                        <div class="lunch_menu">
+                            <div class="slot">
+                                <ul class="slotRun1">
+                                    <li class="lunch_menu">불고기</li>
+                                    <li class="lunch_menu">쌈밥</li>
+                                    <li class="lunch_menu">볶음밥</li>
+                                    <li class="lunch_menu">초밥</li>
+                                    <li class="lunch_menu">해장국</li>
+                                    <li class="lunch_menu">비빔밥</li>
+                                    <li class="lunch_menu">칼국수</li>
+                                    <li class="lunch_menu">라멘</li>
+                                    <li class="lunch_menu">덮밥</li>
+                                    <li class="lunch_menu">돈까스</li>
+                                    <li class="lunch_menu">냉면</li>
+                                    <li class="lunch_menu">우동</li>
+                                    <li class="lunch_menu">갈비탕</li>
+                                    <li class="lunch_menu">도시락</li>
+                                    <li class="lunch_menu">샐러드</li>
+                                    <li class="lunch_menu">햄버거</li>
+                                    <li class="lunch_menu">김밥</li>
+                                    <li class="lunch_menu">떡튀순</li>
+                                    <li class="lunch_menu">카레</li>
+                                    <li class="lunch_menu">찌개류</li>
+                                    <li class="lunch_menu">청국장</li>
+                                    <li class="lunch_menu">삼계탕</li>
+                                    <li class="lunch_menu">짜장면</li>
+                                    <li class="lunch_menu">짬뽕</li>
+                                    <li class="lunch_menu">파스타</li>
+                                    <li class="lunch_menu">리조또</li>
+                                    <li class="lunch_menu">쌀국수</li>
+                                    <li class="lunch_menu">찜닭</li>
+                                    <li class="lunch_menu">팟타이</li>
+                                </ul>
                             </div>
                         </div>
+                        <input type="button" class="button btn_lunch playNormal1 a_white" value="메뉴 고르기"/>
+                    </div>
 
+                    <div class="margin_bottom">
+                        <div class="card mb-3">
+                            <img th:src="@{http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg}" />
+                        </div>
+
+                        <div class="card mb-3">
+                            <img th:src="@{http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg}" />
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!--홈 우측 : 게시물 리스트-->
+            <div class="col-lg-9">
+                <div class="mb-4">
+                    <section class="card margin_bottom2">
+                        <div class="card-header">
+                            <h3 class="boardlist">소소한JOB 카테고리</h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="page">
+                                <div class="row">
+                                    <div class="column small-11 small-centered">
+                                        <section class="visual" th:src="@{assets/sosojob_cate/it.jpeg}">
+                                            <div class="slick-card">
+                                                <a th:href="@{/sosojob/it}">IT</a>
+                                                <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/it.jpeg}"/>
+                                            </div>
+                                            <div class="slick-card">
+                                                <a th:href="@{/sosojob/design}">디자인·설계</a>
+                                                <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/design.jpeg}"/>
+                                            </div>
+                                            <div class="slick-card">
+                                                <a th:href="@{/sosojob/media}">미디어</a>
+                                                <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/media.jpeg}"/>
+                                            </div>
+                                            <div class="slick-card">
+                                                <a th:href="@{/sosojob/translate}">번역</a>
+                                                <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/translate.png}"/>
+                                            </div>
+                                            <div class="slick-card">
+                                                <a th:href="@{/sosojob/document}">문서작업</a>
+                                                <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/document.jpeg}"/>
+                                            </div>
+                                            <div class="slick-card">
+                                                <a th:href="@{/sosojob/marketing}">마케팅</a>
+                                                <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/marketing.jpeg}"/>
+                                            </div>
+                                            <div class="slick-card">
+                                                <a th:href="@{/sosojob/work}">취업·이직</a>
+                                                <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/resume.jpeg}"/>
+                                            </div>
+                                            <div class="slick-card">
+                                                <a th:href="@{/sosojob/edu}">실무교육</a>
+                                                <img class="cate-thumbnail" th:src="@{assets/sosojob_cate/workshop.jpeg}"/>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="card margin_bottom2">
+                        <div class="card-header">
+                            <h3 class="boardlist">QnA</h3>
+                            <span class="more"><a th:href="@{/QnA/list}">더보기</a></span>
+                        </div>
+                        <div class="card-body">
+                            <table class="table" style="table-layout: fixed">
+                                <tbody>
+                                <tr>
+                                    <td class="category"><span class="tag_b" th:name="@{#}">웹개발</span></td>
+                                    <td style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">
+                                        <a th:name="@{#}" th:src="@{#}">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</a>
+                                    </td>
+                                    <td class="data" th:name="@{#}"><img th:src="@{assets/coins.png}" width="19"> 150</td>
+                                    <td class="data" th:name="@{#}"><img th:src="@{assets/eye.png}" width="20"> 67</td>
+                                    <td class="data" th:name="@{#}"><img th:src="@{assets/messenger.png}" width="18"> 5</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="card margin_bottom2">
+                        <div class="card-header">
+                            <h3 class="boardlist">내일이면 사라져요!</h3>
+                            <span class="more"><a th:href="@{/jayu/peong}">더보기</a></span>
+                        </div>
+                        <div class="card-body">
+                            <table class="table" style="table-layout: fixed">
+                                <tbody>
+                                <tr>
+                                    <td class="peong" th:name="@{#}">💣</td>
+                                    <td class="category"><span class="tag_b" th:name="@{#}">소곤소곤</span></td>
+                                    <td class="title" style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">
+                                        <a th:name="@{#}" th:src="@{#}">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</a>
+                                    </td>
+                                    <td class="data" th:name="@{#}"><img th:src="@{assets/heart.png}" width="19"> 150</td>
+                                    <td class="data" th:name="@{#}"><img th:src="@{assets/eye.png}" width="20"> 67</td>
+                                    <td class="data" th:name="@{#}"><img th:src="@{assets/messenger.png}" width="18"> 5</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="card margin_bottom2">
+                        <div class="card-header">
+                            <h3 class="boardlist">자유 게시판</h3>
+                            <span class="more"><a th:href="@{/jayu/List}">더보기</a></span>
+                        </div>
+                        <div class="card-body">
+                            <table class="table" style="table-layout: fixed">
+                                <tbody>
+                                <tr>
+                                    <td class="peong" th:name="@{#}">💣</td>
+                                    <td class="category"><span class="tag_b" th:name="@{#}">소곤소곤</span></td>
+                                    <td style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">
+                                        <a th:name="@{#}" th:src="@{#}">Spring webflux와 mvc를 사용하는 경우 성능어떻게 될까요??</a>
+                                    </td>
+                                    <td class="data"><img th:src="@{assets/heart.png}" width="19"> 150</td>
+                                    <td class="data"><img th:src="@{assets/eye.png}" width="20"> 67</td>
+                                    <td class="data"><img th:src="@{assets/messenger.png}" width="18"> 5</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <div class="mbsize margin_top">
+                        <div class="card mb-3 ">
+                            <img th:src="@{http://www.ilyoweekly.co.kr/news/data/20201027/p1065596013473137_110_thum.jpg}" />
+                        </div>
+
+                        <div class="mb-3 margin_top margin_bottom">
+                            <h4 class="lunch_title">오늘 점심메뉴는?</h4>
+                            <div class="lunch_menu">
+                                <div class="slot">
+                                    <ul class="slotRun2">
+                                        <li class="lunch_menu">불고기</li>
+                                        <li class="lunch_menu">쌈밥</li>
+                                        <li class="lunch_menu">볶음밥</li>
+                                        <li class="lunch_menu">초밥</li>
+                                        <li class="lunch_menu">해장국</li>
+                                        <li class="lunch_menu">비빔밥</li>
+                                        <li class="lunch_menu">칼국수</li>
+                                        <li class="lunch_menu">라멘</li>
+                                        <li class="lunch_menu">덮밥</li>
+                                        <li class="lunch_menu">돈까스</li>
+                                        <li class="lunch_menu">냉면</li>
+                                        <li class="lunch_menu">우동</li>
+                                        <li class="lunch_menu">갈비탕</li>
+                                        <li class="lunch_menu">도시락</li>
+                                        <li class="lunch_menu">샐러드</li>
+                                        <li class="lunch_menu">햄버거</li>
+                                        <li class="lunch_menu">김밥</li>
+                                        <li class="lunch_menu">떡튀순</li>
+                                        <li class="lunch_menu">카레</li>
+                                        <li class="lunch_menu">찌개류</li>
+                                        <li class="lunch_menu">청국장</li>
+                                        <li class="lunch_menu">삼계탕</li>
+                                        <li class="lunch_menu">짜장면</li>
+                                        <li class="lunch_menu">짬뽕</li>
+                                        <li class="lunch_menu">파스타</li>
+                                        <li class="lunch_menu">리조또</li>
+                                        <li class="lunch_menu">쌀국수</li>
+                                        <li class="lunch_menu">찜닭</li>
+                                        <li class="lunch_menu">팟타이</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <input type="button" class="button btn_lunch playNormal2 a_white" value="메뉴 고르기"/>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-
-        <!--footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright ⓒ개미는뚠뚠 2021</p></div>
-        </footer>
-
     </div>
-        <!-- Bootstrap core JS-->
-        <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js}"></script>
-        <!-- Core theme JS-->
-        <script th:src="@{js/scripts.js}"></script>
 
-        <script>
+    <!--footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container"><p class="m-0 text-center text-white">Copyright ⓒ개미는뚠뚠 2021</p></div>
+    </footer>
+
+</div>
+<!-- Bootstrap core JS-->
+<script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js}"></script>
+<!-- Core theme JS-->
+<script th:src="@{js/scripts.js}"></script>
+
+<script>
             <!--Login JS-->
             $('.btn_login').on('click', function(){
                 $('#unlogin').hide();
                 $('.wish').show();
-                $('.container-main').css("margin-top", '11.5rem');
+                $('.container-main').css("margin-top", '13rem');
                 $('#login').show();
             });
 
@@ -378,9 +376,26 @@
             });
 
             <!--Lunch slot JS-->
-            $('.slotRun').jSlots({
-                spinner: '.playNormal'
+            $(document).ready(function() {
+                var width = $(window).width();
+
+                if (width > 991){
+                    $('.slotRun1').jSlots({spinner: '.playNormal1'});
+                } else {
+                    $('.slotRun2').jSlots({spinner: '.playNormal2'});
+                }
             });
-        </script>
-    </body>
+
+            $(window).resize(function() {
+                var width = $(window).width();
+
+                if (width > 991){
+                    $('.slotRun1').jSlots({spinner: '.playNormal1'});
+                } else {
+                    $('.slotRun2').jSlots({spinner: '.playNormal2'});
+                }
+            });
+
+            </script>
+</body>
 </html>

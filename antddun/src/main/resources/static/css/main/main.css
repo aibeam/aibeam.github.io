@@ -1,0 +1,262 @@
+/*Main Style*/
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ELAND_Choice_M';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Choice_M.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+
+span {
+    display: inline-block;
+    font-family: 'ELAND_Choice_M';
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+.a_white{
+   color: white;
+   font-weight: bold;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.gray {
+    color: #8d8d8d;
+    font-weight: bold;
+    margin-left:2px;
+}
+
+.margin_top {
+    padding-top: 25px;
+}
+
+.margin_bottom {
+    padding-bottom: 10px;
+}
+
+.margin_bottom2 {
+    margin-bottom: 20px;
+}
+
+
+/*Header, Nav Fixed Style*/
+#fixed {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 99;
+}
+
+.container-main {
+    margin-top: 9rem;
+}
+
+#logo {
+     font-family: 'yg-jalnan';
+     padding-top: 0.5rem;
+     padding-bottom: 0.5rem;
+     margin-right: 2rem;
+     font-size: 2rem;
+     color: #2b2b2b;
+     white-space: nowrap;
+}
+
+.nav_li {
+    list-style: none;
+    font-family: 'ELAND_Choice_M';
+    font-size: 25px;
+    margin-right: 30px;
+}
+
+
+/*After Login Style*/
+.wish {
+    display: flex;
+    background: #fafafa;
+    height: 55px;
+}
+
+span.wish_first {
+    flex-grow: 1;
+    display: inline-block;
+    line-height: 62px;
+    text-align: center;
+    margin-left:10px;
+    font-family: 'ELAND_Choice_M';
+    font-size: 19px;
+    color: #737373;
+}
+
+strong.wish_first {
+    color: #402700;
+}
+
+.wish_close {
+    width: 20px;
+    height: 20px;
+    margin-right:20px;
+    margin-top: 18px;
+}
+
+
+/*Button*/
+.button {
+  margin: 0.5rem 0rem;
+  padding: 0.5rem 1rem;
+  font-family: 'ELAND_Choice_M';
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  height: 60px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+.btn_login {
+   background: #f9c64f;
+}
+
+.btn_regist {
+    background: #5D4B1D;
+}
+
+.btn_logout {
+   margin-left: 8px;
+   font-family: 'ELAND_Choice_M';
+   font-size: 1rem;
+   font-weight: 400;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   height: 23px;
+   border: none;
+   border-radius: 5px;
+   background: #5D4B1D;
+   color: white;
+}
+
+
+/* User Info Style */
+#user_info {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 3px solid #F9C74F;
+    border-radius: 15px;
+    height: 300px;
+    width:100%;
+    margin-Bottom: 20px;
+    padding: 15px;
+}
+
+.user_img {
+    height:70px;
+}
+
+.user_id {
+    font-size: 18px;
+    line-height: 32px;
+    margin-left: 10px;
+}
+
+.user_item {
+    display: inline-block;
+}
+
+#user_button {
+    display: inline-block;
+    float: right;
+}
+
+.user_nav {
+    list-style: none;
+    font-family: 'ELAND_Choice_M';
+    font-size: 20px;
+}
+
+
+/*Board Style*/
+.boardlist {
+    font-family: 'ELAND_Choice_M';
+    display: inline-block;
+    padding-top: 10px;
+}
+
+
+
+/*Table-Card Style*/
+.title{
+    text-align: left;
+}
+
+.category {
+    width: 85px;
+}
+
+.data {
+    font-size:13px;
+    width: 55px;
+    text-align: center;
+    line-height: 1.9;
+}
+
+.more{
+    float: right;
+    padding-top: 12px;
+}
+
+.text-ellipsis {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	white-space: nowrap;
+}
+
+.text-ellipsis>* {
+    display: table-cell;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/*Table Category Tag Style*/
+.peong {
+    width: 22px;
+    line-height:1.8;
+}
+
+.tag_b {
+    font-size: 13px;
+    padding-top: 4px;
+    border-radius: 5px;
+    height: 28px;
+    width: 73px;
+    color: #919191;
+    border: 2px solid #e0e0e0;
+    text-align: center;
+}
