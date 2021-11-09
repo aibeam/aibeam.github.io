@@ -45,11 +45,11 @@ a:link{
 .gray {
     color: #8d8d8d;
     font-weight: bold;
-    margin-left:2px;
+    margin: 0 12px 0 2px;
 }
 
 .margin_top {
-    padding-top: 25px;
+    padding-top: 15px;
 }
 
 .margin_bottom {
@@ -98,7 +98,7 @@ a:link{
     height: 55px;
 }
 
-span.wish_first {
+span.impact {
     flex-grow: 1;
     display: inline-block;
     line-height: 62px;
@@ -109,7 +109,7 @@ span.wish_first {
     color: #737373;
 }
 
-strong.wish_first {
+strong.impact {
     color: #402700;
 }
 
@@ -148,12 +148,12 @@ strong.wish_first {
 .btn_logout {
    margin-left: 8px;
    font-family: 'ELAND_Choice_M';
-   font-size: 1rem;
+   font-size: 0.9rem;
    font-weight: 400;
    text-align: center;
    text-decoration: none;
    display: inline-block;
-   height: 23px;
+   height: 25px;
    border: none;
    border-radius: 5px;
    background: #5D4B1D;
@@ -168,14 +168,16 @@ strong.wish_first {
     flex-wrap: wrap;
     border: 3px solid #F9C74F;
     border-radius: 15px;
-    height: 300px;
     width:100%;
-    margin-Bottom: 20px;
-    padding: 15px;
+}
+
+.user_wrap {
+    padding: 20px 20px 0px 20px;
 }
 
 .user_img {
     height:70px;
+    margin-bottom: 30px;
 }
 
 .user_id {
@@ -186,6 +188,8 @@ strong.wish_first {
 
 .user_item {
     display: inline-block;
+    height: 70px;
+    vertical-align: center;
 }
 
 #user_button {
@@ -193,10 +197,135 @@ strong.wish_first {
     float: right;
 }
 
-.user_nav {
-    list-style: none;
+#user_nav {
+    width: 100%;
+}
+
+.user_ul {
+    display: flex;
+    margin-top: 20px;
     font-family: 'ELAND_Choice_M';
-    font-size: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.user_li {
+    display: inline-block;
+    width: 35%;
+    height: 40px;
+    line-height: 38px;
+}
+
+.li_center {
+    border-left: 4px solid white;
+    border-right: 4px solid white;
+    background: #f9c74f;
+}
+
+.li_left {
+    border-radius: 0 0 0 10px;
+    background: #f9c74f;
+}
+
+.li_right {
+    border-radius: 0 0 10px 0;
+    background: #f9c74f;
+}
+
+.my_info {
+    font-size: 0.9rem;
+}
+
+/*User Alert Style*/
+.alert_new {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 12px;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    color: white;
+    background: #c21515;
+    border-radius: 15px;
+}
+
+
+#user_alert {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 3px solid #F9C74F;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+    padding: 10px;
+    width:100%;
+}
+
+#alert_tb {
+    width: 100%;
+    margin: 0px 15px 15px 15px;
+}
+
+.alert {
+    font-size: 14px;
+    border-bottom: 1px solid #e3e3e3;
+    padding: 10px;
+}
+
+#user_secret {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 3px solid #F9C74F;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+    padding: 20px;
+    width:100%;
+}
+
+#home {
+    width: 100%;
+    text-align: center;
+    font-family: 'ELAND_Choice_M';
+    font-size: 15px;
+    color: #737373;
+}
+
+#money {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#daily_earn {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+#user_goal {
+    width: 100%;
+    padding: 20px;
+    border: 3px solid #ededed;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+#wish_table {
+    width: 100%;
+}
+
+.wish_product {
+    width: 80%;
+    color: #737373;
+    font-weight: 400;
+}
+
+.wish_day {
+    width: 20%;
+    text-align: right;
+    color: #402700;
+    font-weight: 400;
 }
 
 

@@ -23,9 +23,9 @@
         <!--로그인 정보에 따라 노출 유무 결정-->
         <header>
             <div class="wish" style="display:none;">
-                    <span class="wish_first">
-                        🎉<strong class="wish_first">아이폰13PRO</strong>까지
-                        <strong class="wish_first">5일</strong> 남았습니다.✨
+                    <span class="impact">
+                        🎉<strong class="impact">아이폰13PRO</strong>까지
+                        <strong class="impact">5일</strong> 남았습니다.✨
                     </span>
                 <img th:src="@{assets/close.png}" class="wish_close"/>
             </div>
@@ -67,30 +67,71 @@
                     <!--After Login-->
                     <div id="login" style="display:none;">
                         <div id="user_info">
-                            <div class="user_item">
-                                <img th:src="@{assets/user_img/1.png}" class="user_img"/>
-                            </div>
-                            <div class="user_item user_id">
-                                <span class="bold">개발 </span>
-                                <span class="bold">N년차 </span>
-                                <span class="bold">김개미</span><br>
-                                <span class="gray"><a>내정보</a></span>
-                                <button class="btn_logout">로그아웃</button>
+                            <div class="user_wrap">
+                                <div class="user_item">
+                                    <img th:src="@{assets/user_img/1.png}" class="user_img"/>
+                                </div>
+                                <div class="user_item user_id">
+                                    <span class="bold">개발 </span>
+                                    <span class="bold">N년차 </span>
+                                    <span class="bold">김개미</span><br>
+                                    <span class="gray my_info"><a>내정보</a></span>
+                                    <button class="btn_logout">로그아웃</button>
+                                </div>
                             </div>
                             <div id="user_nav">
-                                <ul class="user_nav">
-                                    <li>알림</li>
-                                    <li>쪽지</li>
-                                    <li>일급기밀</li>
+                                <ul class="user_ul">
+                                    <li class="user_li li_left">알림<span th:name="a" class="alert_new">3</span></li>
+                                    <li class="user_li li_center">쪽지<span th:name="b" class="alert_new">11</span></li>
+                                    <li class="user_li li_right"><img th:src="@{assets/lock.png}" style="width: 20px"/></li>
                                 </ul>
                             </div>
                         </div>
-                        <div id="user_goal">
-                            <span>달성율</span>
-                            <table>
+
+                        <!--버튼 클릭시 open-->
+                        <div id="user_alert" style="display: none;">
+                            <table id="alert_tb" style="table-layout: fixed">
+                                <tbody>
                                 <tr>
-                                    <td>아이패드 에어4</td>
-                                    <td>D-5</td>
+                                    <td class="alert" th:name="@{#}">
+                                        <span>딩동 알림이 왔어요~!</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="alert" th:name="@{#}">
+                                        <span>딩동 알림이 왔어요~!</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="alert" th:name="@{#}">
+                                        <span>딩동 알림이 왔어요~!</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="alert" th:name="@{#}">
+                                        <span>딩동 알림이 왔어요~!</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div id="user_secret" style="display: none;">
+                            <div id="home">
+                                <span>퇴근까지 앞으로 <strong class="impact">3시간</strong></span>
+                            </div>
+                            <div id="money">
+                                <span id="daily_earn">20,000</span>원
+                            </div>
+                        </div>
+
+                        <!--wish list 달성률-->
+                        <div id="user_goal" class="margin_bottom">
+                            <strong>달성율</strong>
+                            <table id="wish_table" style="table-layout: fixed">
+                                <tr>
+                                    <td class="wish_product">아이패드 에어4</td>
+                                    <td class="wish_day">D-5</td>
                                 </tr>
                             </table>
                         </div>
@@ -340,11 +381,46 @@
                 $('#login').show();
             });
 
-            <!--WishList CLose JS-->
+            <!--WishList Close JS-->
             $('.wish_close').on('click', function(){
                 $('.wish').hide();
                 $('.container-main').css("margin-top", '9rem');
             });
+
+            <!--Alert Open JS-->
+            $('.li_left').on('click', function(){
+                $('#user_info').css("border-radius", '15px 15px 0 0');
+                $('.li_left').css("border-radius", '0px');
+                $('.li_right').css("border-radius", '0px');
+                $('.li_left').css("background", '#f9c74f');
+                $('.li_center').css("background", '#e3e3e3');
+                $('.li_right').css("background", '#e3e3e3');
+                $('#user_alert').show();
+                $('#user_secret').hide();
+            });
+
+            $('.li_center').on('click', function(){
+                $('#user_info').css("border-radius", '15px 15px 0 0');
+                $('.li_left').css("border-radius", '0px');
+                $('.li_right').css("border-radius", '0px');
+                $('.li_center').css("background", '#f9c74f');
+                $('.li_left').css("background", '#e3e3e3');
+                $('.li_right').css("background", '#e3e3e3');
+                $('#user_alert').show();
+                $('#user_secret').hide();
+            });
+
+            $('.li_right').on('click', function(){
+                $('#user_info').css("border-radius", '15px 15px 0 0');
+                $('.li_left').css("border-radius", '0px');
+                $('.li_right').css("border-radius", '0px');
+                $('.li_right').css("background", '#f9c74f');
+                $('.li_left').css("background", '#e3e3e3');
+                $('.li_center').css("background", '#e3e3e3');
+                $('#user_secret').show();
+                $('#user_alert').hide();
+            });
+
 
             <!--slick slider JS-->
             $('.visual').slick({
