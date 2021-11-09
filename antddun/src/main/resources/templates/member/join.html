@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{/layout/basicB :: setContent(~{this::content})}">
+    <th:block th:fragment="content">
+        <link th:href="@{/css/join/join.css}" rel="stylesheet" />
+        <script th:src="@{/js/join/join.js}"></script>
+
+        <section class="mg_bottom join_container">
+            <div class="join_div">
+                <div class="logo"><a th:href="@{/}">개미는 뚠뚠</a></div>
+
+                <form method="POST" class="frm" id="frm">
+                    <div>
+                        <div class="reg_label">
+                            <label for="username" id="lbId">아이디</label>
+                            <span class="resultBox idCheckResult"></span>
+                        </div>
+                        <br>
+                        <div class="input-box">
+                            <input type="email" id="username" name="username" placeholder="이메일(아이디)" required autofocus>
+                        </div>
+                        <!--            <button type="button" id="btnIdCheck" class="btn btnDupliCheck">중복 확인</button>-->
+                    </div>
+
+                    <div>
+                        <div class="reg_label">
+                            <label for="password">비밀번호</label>
+                            <span class="resultBox pwdCheckResult"></span>
+                        </div>
+                        <br>
+                        <div class="input-box">
+                            <input type="password" class="pass" id="password" name="password"
+                                   placeholder="비밀번호(영문, 숫자, 특수문자 조합 8~15자)">
+                        </div>
+
+                        <div class="reg_label">
+                            <label for="rePassword">비밀번호 재확인</label>
+                            <span class="resultBox rePwdCheckResult"></span>
+                        </div>
+                        <br>
+                        <div class="input-box">
+                            <input type="password"  class="pass" id="rePassword" name=""
+                                   placeholder="비밀번호 재확인">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="reg_label">
+                            <label for="firstName">이름</label>
+                            <span class="resultBox nameCheckResult"></span>
+                        </div>
+                        <br>
+                        <div>
+                            <div class="name-box">
+                                <input type="text" class="name" th:value="${firstName}" id="firstName" name="firstName" placeholder="성">
+                            </div>
+
+                            <div class="name-box"><input type="text" class="name" id="lastName" name="lastName" placeholder="이름">
+                            </div>
+                            <div id="result"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="reg_label">
+                            <label for="phoneNum">전화번호</label>
+                            <span class="resultBox mobileCheckResult"></span>
+                        </div>
+                        <br>
+                        <div id="phone-box">
+                            <div class="phoneNum-box">
+                                <input type="text" name="phoneNum" id="phoneNum" placeholder="- 없이 입력" maxlength="11"
+                                       onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"/>
+                            </div>
+                            <button type="button" id="btnPhone" class="phoneAuthBtn a_white">인증</button>
+                        </div>
+                    </div>
+                    <!--        <div class="resultBox phoneNumCheckResult"></div>-->
+
+                    <!--form 태그에 method와 action을 지정
+                    보내고자 하는 데이터의 name 속성을 지정해주고 action 속성에 보내고자 하는 url(여기서는 main form태그에서 지정)을 입력
+                    받아주는 파라미터는 view에서 지정한 name과 동일하게 적어주면 자동으로 매핑
+                    DTO 같은 객체에도 객체에 인스턴스 변수로 동일한 이름이 있다면 자동으로 객체에 값이 넘어온다.
+                    -->
+                    <div>
+                        <select class="job" name="jno">
+                            <option th:each="dto : ${jobList}" th:value="${dto.jno}" name="jno">[[${dto.job}]]</option>
+                        </select>
+                        <select class="experience" name="experience"></select>
+                    </div>
+
+                    <h4 class="margin_top">선택사항</h4>
+                    <hr>
+                    <div>
+                        <div class="reg_label">
+                            <label for="salary">연봉</label>
+                            <span class="resultBox salaryCheckResult"></span>
+                        </div>
+                        <br>
+                        <div class="input-box">
+                            <input type="text" id="salary" name="salary" placeholder="연봉"
+                                   onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+                            <div class="tooltip">ⓘ
+                                <span class="tooltiptext">연봉</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reg_label">
+                        <label for="salary">근무시간</label>
+                        <span class="resultBox salaryCheckResult"></span>
+                    </div>
+                    <br>
+                    <select class="startTime" name="startTime"></select>
+                    <select class="endTime" name="endTime"></select><br>
+
+                    <div class="reg_label">
+                        <label for="salary">추천인</label>
+                        <span class="resultBox recUserCheckResult"></span>
+                    </div>
+                    <br>
+                    <div class="input-box">
+                        <input type="text" id="recommendUser" name="" placeholder="추천인">
+                        <div class="tooltip">ⓘ<span class="tooltiptext">추천인</span></div>
+                    </div>
+                    <button type="submit" class="button btnJoin">회원가입</button>
+                </form>
+            </div>
+        </section>
+    </th:block>
+</th:block>
+</html>

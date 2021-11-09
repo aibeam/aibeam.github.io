@@ -15,7 +15,16 @@
         text-align: center;
    }*/
 
-   .join_container { margin: 0 auto}
+   .join_container {
+        width: 100%;
+        margin-top: -4rem;
+        margin-bottom: 1rem;
+   }
+
+   .join_div {
+        margin: 0 auto;
+        width: 400px;
+   }
 
    #title {
         font-family: 'Jua', sans-serif;
@@ -34,7 +43,7 @@
         height: 50px;
         padding: 0;
         line-height: 48px;
-        border-radius: 3px;
+        border-radius: 5px;
    }
 
    input {
@@ -43,8 +52,8 @@
         height: 43px;
         vertical-align: middle;
         padding-right: 10px;
-                padding-left: 20px;
-
+        padding-left: 20px;
+        border-radius: 5px;
    }
 
     input:focus {outline: none;}
@@ -52,21 +61,26 @@
     select{
         width: 195px;
         height: 50px;
-        border: 1px solid rgb(220,220,220)
-        border-radius: 3px;
+        border: 1px solid rgb(220,220,220);
+        border-radius: 5px;
         margin-top: 10px;
         padding-left: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+    }
 
+    .reg_label {
+        padding: 0 5px;
     }
 
     label {
         float: left;
+        font-family: 'ELAND_Choice_M';
     }
 
     .resultBox {
         float:right;
-        padding-top: 8px;
+        font-size: 12px;
+        color: red;
     }
 
     /* 아이디 */
@@ -83,10 +97,6 @@
          border-radius: 3px; :
      }*/
 
-     .idCheckResult {
-         float: right;
-     }
-
    .name-box {
         display: inline-block;
         border: 1px solid rgb(220,220,220);
@@ -94,7 +104,7 @@
         height: 50px;
         margin-top: 10px;
         line-height: 48px;
-        border-radius: 3px;
+        border-radius: 5px;
         margin-bottom: 20px;
 
    }
@@ -106,19 +116,26 @@
         height: 43px;
         vertical-align: middle;
         padding-left: 20px;
+        border-radius: 5px;
    }
 
    .span-box { vertical-align: middle; }
 
-   .pass, #username{ padding-right: 30px; }
+   .pass, #username{
+    padding-right: 30px;
+    border-radius: 5px;
+   }
 
     /* MOBILE */
 
+   #phone-box {
+        width: 400px;
+   }
    #phoneNum {
-        width: 250px;
+        width: 310px;
         padding-right:30px;
         padding-left: 20px;
-
+        border-radius: 5px;
    }
 
    .phoneNum-box {
@@ -127,23 +144,24 @@
            margin-top: 10px;
            margin-bottom: 20px;
 
-           width: 320px;
+           width: 315px;
            border: 1px solid rgb(220,220,220);
            height: 50px;
            padding: 0;
-           line-height: 48px;
-           border-radius: 3px;
+           line-height: 42px;
+           border-radius: 5px;
       }
 
     #btnPhone {
-        border: none;
+        display: inline-block;
         background-color: rgb(241,196,15);
-        color: #fff;
-        height: 55px;
-        width: 70px;
+        height: 50px;
+        width: 75px;
         pointer: cursor;
-        border-radius: 3px;
-        border: 1px solid rgb(220,220,220);
+        border: none;
+        border-radius: 5px;
+        font-family: 'ELAND_Choice_M';
+        font-size: 14px;
     }
 
     /* TOOL TIP*/
@@ -187,7 +205,7 @@
    #recommendUser #salary { width: 100px; }
 
    .btnJoin {
-        margin-top: 10px;
+        margin-top: 40px;
         border: none;
         background-color: rgb(241,196,15);
         color: #fff;
@@ -197,6 +215,3 @@
         font-weight: bold;
         margin-bottom: 20px;
    }
-
-
-

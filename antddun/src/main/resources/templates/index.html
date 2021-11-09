@@ -9,7 +9,7 @@
     <link th:href="@{css/main/styles.css}" rel="stylesheet" />
     <link th:href="@{css/main/main.css}" rel="stylesheet">
     <link th:href="@{css/main/slick.css}" rel="stylesheet">
-    <link th:href="@{css/slotmachine.css}" rel="stylesheet">
+    <link th:href="@{css/main/slotmachine.css}" rel="stylesheet">
 
     <script th:src="@{https://code.jquery.com/jquery-3.6.0.min.js}"></script>
     <script type="text/javascript" th:src="@{http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js}"></script>
@@ -60,7 +60,7 @@
                             <a th:href="@{#}" class="a_white">로그인</a>
                         </button>
                         <button class="button btn_regist">
-                            <a th:href="@{/joinPage}" class="a_white">회원가입</a>
+                            <a th:href="@{/joinAgree}" class="a_white">회원가입</a>
                         </button>
                     </div>
 
@@ -75,8 +75,8 @@
                                     <span class="bold">개발 </span>
                                     <span class="bold">N년차 </span>
                                     <span class="bold">김개미</span><br>
-                                    <span class="gray my_info"><a>내정보</a></span>
-                                    <button class="btn_logout">로그아웃</button>
+                                    <span><a th:href="@{/member/mypage}" class="gray my_info">내정보</a></span>
+                                    <button class="btn_logout"><a th:href="@{/}" class="a_white">로그아웃</a></button>
                                 </div>
                             </div>
                             <div id="user_nav">
